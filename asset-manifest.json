@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Rental_Camper_250225/static/css/main.7acaea2f.css",
+    "main.js": "/Rental_Camper_250225/static/js/main.07d3183d.js",
+    "index.html": "/Rental_Camper_250225/index.html",
+    "main.7acaea2f.css.map": "/Rental_Camper_250225/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/Rental_Camper_250225/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
