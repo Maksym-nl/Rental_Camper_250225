@@ -1,31 +1,31 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCamperById } from 'api/api';
-
 export const OptionsCamper = () => {
-  const [options, setOptions] = useState([]);
-  const params = useParams();
+  const [options, setOptions] = useState(null);
+  const { id } = useParams();
   useEffect(() => {
     async function getOptions() {
       try {
-        const responce = await fetchCamperById(params.id);
-        setOptions(responce.options);
+        const responce = await fetchCamperById(id);
+        setOptions(responce);
       } catch (error) {}
     }
-    getOptions();
-  }, [params.id]);
+    id && getOptions();
+  }, [id]);
+
   return (
     <div>
       <ul>
-        {options.map(option => (
-          <li key={option.id}>
-            <p>Transmission: {option.transmission}</p>
-            <p>Ac: {option.ac}</p>
-            <p>Engine: {option.engine}</p>
-            <p>Kitchen: {option.kitchen}</p>
-            <p>Radio: {option.radio}</p>
+        {options && (
+          <li>
+            <p>Transmission: {options.transmission}</p>
+            <p>AC: {options.AC}</p>
+            <p>Engine: {options.engine}</p>
+            <p>Kitchen: {options.kitchen ? 'Yes' : 'No'}</p>
+            <p>Radio: {options.radio ? 'Yes' : 'No'}</p>
           </li>
-        ))}
+        )}
       </ul>
     </div>
   );

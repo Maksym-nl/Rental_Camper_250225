@@ -24,7 +24,13 @@ export default function CatalogPage() {
         {campers.map(camper => {
           return (
             <li key={camper.id}>
-              {<img src={camper.gallery.thumb} alt={camper.name} />}
+              {
+                <img
+                  src={camper.gallery[0].thumb}
+                  alt={camper.name}
+                  width={150}
+                />
+              }
               <h3>{camper.name}</h3>
               <p>{camper.rating}</p>
               <p>{camper.location}</p>
