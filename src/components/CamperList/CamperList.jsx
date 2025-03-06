@@ -1,33 +1,30 @@
-// import { ShowMoreBtn } from 'components/showMore/ShowMore';
-// import { Equipment } from '../equipment/Equipment';
-export const CamperList = ({ campers }) => {
-  console.log(campers);
-  return (
-    <ul>
-      {campers.map(camper => {
-        return (
-          <li key={camper.id}>
-            <p>{camper.name}</p>
-            <p>{camper.price}</p>
-            <p>{camper.rating}</p>
-            <p>{camper.location}</p>
-            <p>{camper.description}</p>
-            <ul>
-              {camper.gallery?.map((image, index) => (
-                <li key={index}>
-                  <img
-                    src={image.original}
-                    alt={`Images ${index + 1}`}
-                    width={200}
-                  />
-                </li>
-              ))}
-            </ul>
+// import { CamperItems } from 'components/CamperItem/CamperItem';
+// // import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
 
-            {/* <ShowMoreBtn /> */}
-          </li>
-        );
-      })}
-    </ul>
-  );
-};
+// export const CamperList = ({ campers }) => {
+//   return (
+//     <div>
+//       {campers.map(camper => (
+//         <li key={camper.id}>
+//           <CamperItems campers={campers} />
+//           <ShowMoreBtn />
+//         </li>
+//       ))}
+//     </div>
+//   );
+// };
+// export const CamperList = ({ campers }) => {
+//   return (
+//     <div>
+//       <div>
+//         {' '}
+//         <p>
+//           <img src={campers.gallery.original} alt={campers.name} />
+//         </p>
+//       </div>
+//       <div>
+//         <h2>{campers.name}</h2>
+//       </div>
+//     </div>
+//   );
+// };

@@ -1,9 +1,10 @@
 // import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { fetchCampers } from 'api/api';
-import { CamperList } from 'components/CamperList/CamperList';
-
+// import { CamperList } from 'components/CamperList/CamperList';
+import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
+import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
 export default function CatalogPage() {
   const params = useParams();
   const [campers, setCampers] = useState([]);
@@ -19,7 +20,23 @@ export default function CatalogPage() {
   }, []);
   return (
     <div>
-      <CamperList campers={campers} />
+      <ul>
+        {campers.map(camper => {
+          return (
+            <li key={camper.id}>
+              {<img src={camper.gallery.thumb} alt={camper.name} />}
+              <h3>{camper.name}</h3>
+              <p>{camper.rating}</p>
+              <p>{camper.location}</p>
+              <p>{camper.description}</p>
+              <Link to={`/campers/${camper.id}`}>
+                <ShowMoreBtn />
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+      <LoadMoreBtn />
     </div>
   );
 }
