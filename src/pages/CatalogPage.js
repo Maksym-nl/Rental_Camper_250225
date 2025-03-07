@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { fetchCampers } from 'api/api';
 // import { CamperList } from 'components/CamperList/CamperList';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
@@ -18,6 +18,7 @@ export default function CatalogPage() {
     }
     getCampers();
   }, []);
+  const location = useLocation();
   return (
     <div>
       <ul>
@@ -35,7 +36,7 @@ export default function CatalogPage() {
               <p>{camper.rating}</p>
               <p>{camper.location}</p>
               <p>{camper.description}</p>
-              <Link to={`/campers/${camper.id}`}>
+              <Link to={`/campers/${camper.id}`} state={{ from: location }}>
                 <ShowMoreBtn />
               </Link>
             </li>

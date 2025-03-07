@@ -22,6 +22,7 @@ export default function DetailsPage() {
   if (!camper) {
     return <div>Loading...</div>; // Показываем индикатор загрузки
   }
+
   return (
     <div>
       {/* <CamperList campers={[camper]} /> */}

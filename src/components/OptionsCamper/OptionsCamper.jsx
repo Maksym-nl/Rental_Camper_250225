@@ -20,7 +20,7 @@ export const OptionsCamper = () => {
         {options && (
           <li>
             <p>Transmission: {options.transmission}</p>
-            <p>AC: {options.AC}</p>
+            <p>AC: {options.AC ? 'Yes' : 'No'}</p>
             <p>Engine: {options.engine}</p>
             <p>Kitchen: {options.kitchen ? 'Yes' : 'No'}</p>
             <p>Radio: {options.radio ? 'Yes' : 'No'}</p>

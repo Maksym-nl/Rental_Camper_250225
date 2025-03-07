@@ -1,17 +1,33 @@
-export const VehicleDetails = ({ campers }) => {
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchCamperById } from 'api/api';
+export const VehicleDetails = () => {
+  const [vehicles, setVehicles] = useState([]);
+  const params = useParams();
+  useEffect(() => {
+    async function getVehicles() {
+      try {
+        const responce = await fetchCamperById(params.id);
+        setVehicles(responce);
+      } catch (error) {}
+    }
+    getVehicles();
+  }, [params.id]);
   return (
     <div>
       <ul>
-        {campers.map(camper => (
-          <li key={camper.id}>
-            <p>Form: {camper.form}</p>
-            <p>Length: {camper.length}</p>
-            <p>Width: {camper.width}</p>
-            <p>Height: {camper.height}</p>
-            <p>Tank: {camper.tank}</p>
-            <p>Consumption: {camper.consumption}</p>
-          </li>
-        ))}
+        {vehicles.map(vehicle => {
+          return (
+            <li key={vehicle.id}>
+              <p>Form: {vehicle.form}</p>
+              <p>Length: {vehicle.length}</p>
+              <p>Width: {vehicle.width}</p>
+              <p>Height: {vehicle.height}</p>
+              <p>Tank: {vehicle.tank}</p>
+              <p>Consumption: {vehicle.consumption}</p>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -2,10 +2,11 @@ import { fetchCamperById } from 'api/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { OptionsCamper } from '../OptionsCamper/OptionsCamper';
-// import { VehicleDetails } from 'components/VehicleDetails/VehicleDetails';
+// import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
 
 export const Features = () => {
   const [features, setFeatures] = useState([]);
+
   const params = useParams();
 
   useEffect(() => {
@@ -23,22 +24,7 @@ export const Features = () => {
   return (
     <div>
       <OptionsCamper />
-
-      {/* <VehicleDetails />  */}
-
-      {/* <ul>
-        {features.map(feature => {
-          return (
-            <li key={feature.id}>
-              <p>Transmission: {feature.transmission}</p>
-              <p>Ac: {feature.ac}</p>
-              <p>Engine: {feature.engine}</p>
-              <p>Kitchen: {feature.kitchen}</p>
-              <p>Radio: {feature.radio}</p>
-            </li>
-          );
-        })}
-      </ul> */}
+      {/* <VehicleDetails/> */}
     </div>
   );
 };
