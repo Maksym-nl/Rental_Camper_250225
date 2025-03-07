@@ -5,6 +5,7 @@ import { fetchCampers } from 'api/api';
 // import { CamperList } from 'components/CamperList/CamperList';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 export default function CatalogPage() {
   const params = useParams();
   const [campers, setCampers] = useState([]);
@@ -21,6 +22,7 @@ export default function CatalogPage() {
   const location = useLocation();
   return (
     <div>
+      <SearchBar />
       <ul>
         {campers.map(camper => {
           return (

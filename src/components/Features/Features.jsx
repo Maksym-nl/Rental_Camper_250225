@@ -2,7 +2,7 @@ import { fetchCamperById } from 'api/api';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { OptionsCamper } from '../OptionsCamper/OptionsCamper';
-// import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
+import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
 
 export const Features = () => {
   const [features, setFeatures] = useState([]);
@@ -12,8 +12,8 @@ export const Features = () => {
   useEffect(() => {
     async function getFeatures() {
       try {
-        const response = await fetchCamperById(params.id);
-        setFeatures(response.features);
+        const responce = await fetchCamperById(params.id);
+        setFeatures(responce.features);
       } catch (error) {
         console.error('Error fetching features:', error);
       }
@@ -24,7 +24,7 @@ export const Features = () => {
   return (
     <div>
       <OptionsCamper />
-      {/* <VehicleDetails/> */}
+      <VehicleDetails />
     </div>
   );
 };

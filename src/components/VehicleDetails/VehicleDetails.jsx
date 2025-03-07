@@ -3,16 +3,16 @@ import { useParams } from 'react-router-dom';
 import { fetchCamperById } from 'api/api';
 export const VehicleDetails = () => {
   const [vehicles, setVehicles] = useState([]);
-  const params = useParams();
+  const { id } = useParams();
   useEffect(() => {
     async function getVehicles() {
       try {
-        const responce = await fetchCamperById(params.id);
-        setVehicles(responce);
+        const responce = await fetchCamperById(id);
+        setVehicles(responce());
       } catch (error) {}
     }
     getVehicles();
-  }, [params.id]);
+  }, [id]);
   return (
     <div>
       <ul>
