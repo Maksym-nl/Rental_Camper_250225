@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/Rental_Camper_250225/static/js/main.448eadd9.js",
+    "main.js": "/Rental_Camper_250225/static/js/main.f37d74b5.js",
     "index.html": "/Rental_Camper_250225/index.html",
-    "main.448eadd9.js.map": "/Rental_Camper_250225/static/js/main.448eadd9.js.map"
+    "main.f37d74b5.js.map": "/Rental_Camper_250225/static/js/main.f37d74b5.js.map"
   },
   "entrypoints": [
-    "static/js/main.448eadd9.js"
+    "static/js/main.f37d74b5.js"
   ]
 }
