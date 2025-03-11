@@ -1,15 +1,15 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+axios.defaults.baseURL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
 
-// Асинхронное действие для загрузки камперов
 export const fetchCampers = createAsyncThunk(
   'campers/fetchCampers',
-  async (_, thunkApi) => {
+  async (_, thunkAPI) => {
     try {
-      const response = await axios.get('campers');
-      return response.data;
+      const responce = await axios.get('campers');
+      return responce.data;
     } catch (error) {
-      return thunkApi.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );

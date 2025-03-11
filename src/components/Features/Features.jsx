@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { OptionsCamper } from '../OptionsCamper/OptionsCamper';
 import { VehicleDetails } from '../VehicleDetails/VehicleDetails';
 
-export const Features = () => {
+export default function Features() {
   const [features, setFeatures] = useState([]);
 
   const params = useParams();
@@ -27,4 +27,4 @@ export const Features = () => {
       <VehicleDetails />
     </div>
   );
-};
+}

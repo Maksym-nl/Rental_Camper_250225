@@ -15,11 +15,12 @@ export const VehicleDetails = () => {
   }, [id]);
   return (
     <div>
+      <p>Vehicle details</p>
       <ul>
         {vehicles.map(vehicle => {
           return (
             <li key={vehicle.id}>
-              <p>Form: {vehicle.form}</p>
+              <p> Form: {vehicle.form}</p>
               <p>Length: {vehicle.length}</p>
               <p>Width: {vehicle.width}</p>
               <p>Height: {vehicle.height}</p>

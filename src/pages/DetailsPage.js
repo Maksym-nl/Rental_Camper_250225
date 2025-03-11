@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import { fetchCamperById } from 'api/api';
 import { Link } from 'react-router-dom';
+import { Loader } from 'components/Loader/Loader';
 // import { OptionsCamper } from 'components/OptionsCamper/OptionsCamper';
 // import { VehicleDetails } from 'components/VehicleDetails/VehicleDetails';
 
@@ -20,7 +21,11 @@ export default function DetailsPage() {
   }, [params.id]);
   console.log(camper);
   if (!camper) {
-    return <div>Loading...</div>; // Показываем индикатор загрузки
+    return (
+      <div>
+        <Loader />
+      </div>
+    ); // Показываем индикатор загрузки
   }
 
   return (

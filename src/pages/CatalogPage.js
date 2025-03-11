@@ -6,6 +6,7 @@ import { fetchCampers } from 'api/api';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
 import { SearchBar } from 'components/SearchBar/SearchBar';
+
 export default function CatalogPage() {
   const params = useParams();
   const [campers, setCampers] = useState([]);
@@ -14,7 +15,7 @@ export default function CatalogPage() {
     async function getCampers() {
       try {
         const responce = await fetchCampers();
-        setCampers(responce.items);
+        setCampers(responce.items || responce);
       } catch (error) {}
     }
     getCampers();
@@ -38,6 +39,25 @@ export default function CatalogPage() {
               <p>{camper.rating}</p>
               <p>{camper.location}</p>
               <p>{camper.description}</p>
+              <div>
+                <ul>
+                  <li>
+                    <p>Automatic</p>
+                  </li>
+                  <li>
+                    <p>AC</p>
+                  </li>
+                  <li>
+                    <p>Petrol</p>
+                  </li>
+                  <li>
+                    <p>Kitchen</p>
+                  </li>
+                  <li>
+                    <p>Bathroom</p>
+                  </li>
+                </ul>
+              </div>
               <Link to={`/campers/${camper.id}`} state={{ from: location }}>
                 <ShowMoreBtn />
               </Link>
