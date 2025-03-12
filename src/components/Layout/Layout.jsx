@@ -1,9 +1,12 @@
 import { NavLink, Outlet } from 'react-router-dom';
+// import { Logo } from './Layout.styled';
 export const Layout = () => {
   return (
     <div>
       <header>
-        <h4>"TravelTrucks"</h4>
+        <p>
+          <span>Travel</span>Trucks
+        </p>
         <ul>
           <li>
             <NavLink to="/">Home</NavLink>

@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { addCamper } from '../redux/campersSlice';
+
 import { fetchCampers } from '../redux/operation';
 
 import { Loader } from './Loader/Loader';

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-// import { store } from './redux/store';
+import { ThemeProvider } from '@emotion/react';
 import { Provider } from 'react-redux';
 import { store } from './redux/redux';
-// import { PersistGate } from 'redux-persist/integration/react';
+import { theme } from './components/constants/theme';
 import { App } from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,9 +12,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter basename="/Rental_Camper_250225">
       <Provider store={store}>
-        {/* <PersistGate persistor={persistor} loading={null}> */}
-        <App />
-        {/* </PersistGate> */}
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
