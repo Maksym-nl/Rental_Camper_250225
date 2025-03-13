@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { fetchCampers } from '../redux/operation';
@@ -13,14 +13,12 @@ const Features = lazy(() => import('components/Features/Features'));
 const Reviews = lazy(() => import('components/Reviews/Reviews'));
 
 export const App = () => {
-  const [filter, setFilter] = useState('');
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCampers());
   }, [dispatch]);
   return (
     <Suspense fallback={<Loader />}>
-      {' '}
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -30,7 +28,6 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
-          <Route />
         </Route>
       </Routes>
     </Suspense>
