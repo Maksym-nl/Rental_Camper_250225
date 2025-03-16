@@ -2,10 +2,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
 import { lazy, Suspense, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-
 import { fetchCampers } from '../redux/operation';
-
 import { Loader } from './Loader/Loader';
+
 const Home = lazy(() => import('pages/HomePage'));
 const CatalogPage = lazy(() => import('pages/CatalogPage'));
 const DetailsPage = lazy(() => import('pages/DetailsPage'));
@@ -17,6 +16,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(fetchCampers());
   }, [dispatch]);
+
   return (
     <Suspense fallback={<Loader />}>
       <Routes>

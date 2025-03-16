@@ -1,3 +1,4 @@
+import { LdMoreBtn } from './LdMore.styled';
 export const LoadMoreBtn = () => {
-  return <button type="button">Load More</button>;
+  return <LdMoreBtn type="button">Load More</LdMoreBtn>;
 };

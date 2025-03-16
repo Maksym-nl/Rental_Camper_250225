@@ -1,21 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { App } from './components/App';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { Provider } from 'react-redux';
-import { store } from './redux/redux';
+import { GlobalStyle } from './styles/GlobalStyle';
 import { theme } from './components/constants/theme';
-import { App } from './components/App';
+import { Container } from './components/Container/Container.styled';
+// import 'modern-normalize';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Rental_Camper_250225">
-      <Provider store={store}>
+    <Provider store={store}>
+      <BrowserRouter>
         <ThemeProvider theme={theme}>
-          <App />
+          <GlobalStyle />
+          <Container>
+            <App />
+          </Container>
         </ThemeProvider>
-      </Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );

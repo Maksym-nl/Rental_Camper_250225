@@ -1,3 +1,4 @@
+import { ShMoreBtn } from './ShowMoreBtn.styled';
 export const ShowMoreBtn = () => {
-  return <button type="button">Show More</button>;
+  return <ShMoreBtn type="button">Show More</ShMoreBtn>;
 };

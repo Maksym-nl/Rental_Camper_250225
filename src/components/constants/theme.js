@@ -13,4 +13,8 @@ export const theme = {
     F7F7F7: '#F7F7F7',
     FFFFFF: '#FFFFFF',
   },
+  radii: {
+    normal: '200px',
+  },
+  spacing: value => `${value * 4}px`,
 };

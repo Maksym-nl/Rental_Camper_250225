@@ -1,25 +1,25 @@
 import { NavLink, Outlet } from 'react-router-dom';
-// import { Logo } from './Layout.styled';
+import { Header, Logo, Trucks, Nav } from './Layout.styled';
 export const Layout = () => {
   return (
     <div>
-      <header>
-        <p>
-          <span>Travel</span>Trucks
-        </p>
-        <ul>
+      <Header>
+        <Logo>
+          Travel<Trucks>Trucks</Trucks>
+        </Logo>
+        <Nav>
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <NavLink to="/campers">Catalog</NavLink>
           </li>
-        </ul>
-      </header>
+        </Nav>
+      </Header>
       <main>
         <Outlet />
       </main>
-      <footer>Footer</footer>
+      {/* <footer>Footer</footer> */}
     </div>
   );
 };

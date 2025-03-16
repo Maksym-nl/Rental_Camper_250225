@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
-export const BtnSearch = styled.button`
+export const ShMoreBtn = styled.button`
   font-size: 16px;
   background-color: ${p => p.theme.colors['E44848']};
-
   color: ${p => p.theme.colors['FFFFFF']};
   padding: ${p => p.theme.spacing(4)} ${p => p.theme.spacing(15)};
-
   border: none;
   border-radius: ${p => p.theme.radii.normal};
   cursor: pointer;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BtnSearch = styled.button`
+export const Btn = styled.button`
   font-size: 16px;
   background-color: ${p => p.theme.colors['E44848']};
 

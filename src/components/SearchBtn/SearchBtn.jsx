@@ -1,4 +1,4 @@
-import { Btn } from './SearchBtn.styled';
+import { BtnSearch } from './SearchBtn.styled';
 export const SearchBtn = () => {
-  return <Btn type="button">Search</Btn>;
+  return <BtnSearch type="button">Search</BtnSearch>;
 };

@@ -3,9 +3,10 @@ import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 
 import { SearchBar } from 'components/SearchBar/SearchBar';
 
-export default function CatalogPage() {
+export default function CatalogPage({ children }) {
   return (
     <div>
+      {children}
       <div>
         <SearchBar />
       </div>

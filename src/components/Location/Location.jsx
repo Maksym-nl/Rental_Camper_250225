@@ -26,16 +26,16 @@ export const Location = () => {
   return (
     <div>
       <p>Location</p>
-      {/* <form onSubmit={handleSubmit}> */}
-      <input
-        type="text"
-        autoComplete="off"
-        autoFocus
-        value={value}
-        placeholder="Search City"
-        onChange={onChange}
-      />
-      {/* </form> */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          autoComplete="off"
+          autoFocus
+          value={value}
+          placeholder="Search City"
+          onChange={onChange}
+        />
+      </form>
     </div>
   );
 };
