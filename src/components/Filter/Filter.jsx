@@ -1,14 +1,14 @@
 import React from 'react';
-
+import { FilterContainer, FilterTitle } from './Filter.styled';
 import { VehicleEquipment } from 'components/VehicleEquipment/VehicleEquipment';
 import { VehicleType } from 'components/VehicleType/VehicleType';
 
 export const Filter = () => {
   return (
-    <div>
-      <h3>Filter</h3>
+    <FilterContainer>
+      <FilterTitle>Filter</FilterTitle>
       <VehicleEquipment />
       <VehicleType />
-    </div>
+    </FilterContainer>
   );
 };

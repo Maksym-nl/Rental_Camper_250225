@@ -5,7 +5,7 @@ export const Header = styled.div`
   align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
-  background-color: ${props => props.theme.colors['F7F7F7']};
+  background-color: ${props => props.theme.colors['F2F4F7']};
   /* gap: 450px; */
 `;
 export const Logo = styled.div`

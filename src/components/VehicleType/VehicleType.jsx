@@ -1,19 +1,45 @@
+import {
+  VehicleTypeContainer,
+  VehicleTypeTitle,
+  Line,
+  VehicleTypeList,
+  VehicleTypeItem,
+  VehicleTypeItemImage,
+} from './VehicleType.styled';
+import vanIcon from '../../img/bi_grid-1x2.svg';
+import fullyIntegratedIcon from '../../img/bi_grid.svg';
+import alcoveIcon from '../../img/bi_grid-3x3-gap.svg';
 export const VehicleType = () => {
   return (
-    <div>
-      <h3>Vehicle type</h3>
-      <span>_______________________</span>
-      <ul>
-        <li>
-          <button type="button">Van</button>
-        </li>
-        <li>
-          <button type="button">Fully Integrated</button>{' '}
-        </li>
-        <li>
-          <button type="button">Alcove</button>
-        </li>
-      </ul>
-    </div>
+    <VehicleTypeContainer>
+      <VehicleTypeTitle>Vehicle type</VehicleTypeTitle>
+      <Line />
+      <VehicleTypeList>
+        <VehicleTypeItem>
+          <button type="button">
+            <div>
+              <VehicleTypeItemImage src={vanIcon} alt="Van" />
+              <p>Van</p>
+            </div>
+          </button>
+        </VehicleTypeItem>
+        <VehicleTypeItem>
+          <button type="button">
+            <div>
+              <img src={fullyIntegratedIcon} alt="Fully Integrated" />
+              <p>Fully Integrated</p>
+            </div>
+          </button>
+        </VehicleTypeItem>
+        <VehicleTypeItem>
+          <button type="button">
+            <div>
+              <img src={alcoveIcon} alt="Alcove" />
+              <p>Alcove</p>
+            </div>
+          </button>
+        </VehicleTypeItem>
+      </VehicleTypeList>
+    </VehicleTypeContainer>
   );
 };

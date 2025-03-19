@@ -14,7 +14,6 @@ export const LdMoreBtn = styled.button`
   &:hover,
   &:focus {
     border: 1px solid ${props => props.theme.colors['D84343']};
-    /* border-color: ${props => props.theme.colors['D84343']}; */
   }
   &:active {
     transform: scale(0.98); // Слегка уменьшает размер кнопки при клике

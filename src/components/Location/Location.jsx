@@ -3,6 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { setFilter } from '../../redux/filterSlice';
 import { getFilter } from '../../redux/selectors';
+import {
+  LocationForm,
+  Text,
+  Input,
+  InputWrapper,
+  IconWrapper,
+} from './Location.styled';
 
 export const Location = () => {
   const [input, setInput] = useState('');
@@ -24,18 +31,21 @@ export const Location = () => {
   const value = useSelector(getFilter);
 
   return (
-    <div>
-      <p>Location</p>
+    <LocationForm>
+      <Text>Location</Text>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          autoComplete="off"
-          autoFocus
-          value={value}
-          placeholder="Search City"
-          onChange={onChange}
-        />
+        <InputWrapper>
+          <IconWrapper />
+          <Input
+            type="text"
+            autoComplete="off"
+            autoFocus
+            value={value}
+            placeholder="Search City"
+            onChange={onChange}
+          />
+        </InputWrapper>
       </form>
-    </div>
+    </LocationForm>
   );
 };
