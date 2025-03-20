@@ -2,29 +2,28 @@ import { createSlice } from '@reduxjs/toolkit';
 import { fetchCampers } from './operation';
 
 const handlePending = state => {
-  state.campers.isLoading = true;
-  state.campers.error = null;
+  state.isLoading = true;
+  state.error = null;
 };
 const handleRejected = (state, action) => {
-  state.campers.isLoading = false;
-  state.campers.error = action.payload;
+  state.isLoading = false;
+  state.error = action.payload;
 };
 export const campersSlise = createSlice({
   name: 'campers',
   initialState: {
-    campers: {
-      items: [],
-      isLoading: false,
-      error: null,
-    },
+    items: [],
+    isLoading: false,
+    error: null,
   },
 
   extraReducers: builder =>
     builder
       .addCase(fetchCampers.fulfilled, (state, action) => {
-        state.campers.items = action.payload;
-        state.campers.isLoading = false;
+        state.items = action.payload.items;
+        state.isLoading = false;
       })
       .addCase(fetchCampers.pending, handlePending)
       .addCase(fetchCampers.rejected, handleRejected),
 });
+export default campersSlise.reducer;

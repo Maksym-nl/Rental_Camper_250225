@@ -1,24 +1,30 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
-import { fetchCampers } from 'api/api';
+// import { fetchCampers } from 'api/api';
 import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
+import { useSelector } from 'react-redux';
+import { getFilterCampers } from '../../redux/selectors';
+import { CamperListContainer } from './CamperList.styled';
 
 export const CamperList = () => {
-  const params = useParams();
-  const [campers, setCampers] = useState([]);
-  console.log(params);
-  useEffect(() => {
-    async function getCampers() {
-      try {
-        const responce = await fetchCampers();
-        setCampers(responce.items || responce);
-      } catch (error) {}
-    }
-    getCampers();
-  }, []);
+  // const params = useParams();
+  // const [campers, setCampers] = useState([]);
+  // console.log(params);
+  // useEffect(() => {
+  //   async function getCampers() {
+  //     try {
+  //       const responce = await fetchCampers();
+  //       setCampers(responce.items || responce);
+  //     } catch (error) {}
+  //   }
+  //   getCampers();
+  // }, []);
+
+  const campers = useSelector(getFilterCampers);
   const location = useLocation();
+  console.log(campers.length);
   return (
-    <div>
+    <CamperListContainer>
       <ul>
         {campers.map(camper => {
           return (
@@ -60,6 +66,6 @@ export const CamperList = () => {
           );
         })}
       </ul>
-    </div>
+    </CamperListContainer>
   );
 };

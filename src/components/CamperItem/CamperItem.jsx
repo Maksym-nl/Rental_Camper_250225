@@ -1,32 +1,36 @@
-// import { ContainerItems } from './CamperItem.styled';
+import { ContainerItems } from './CamperItem.styled';
 
 export const CamperItems = ({ campers }) => {
   return (
-    <div>
+    <ContainerItems>
       <ul>
         {campers.map(camper => {
           return (
             <li key={camper.id}>
-              <p>{camper.name}</p>
-              <p>{camper.price}</p>
-              <p>{camper.rating}</p>
-              <p>{camper.location}</p>
               <ul>
-                {campers.gallery?.map(image => (
-                  <li key={image.id}>
-                    <img
-                      src={image.original}
-                      alt={`Images ${camper.name}`}
-                      width={200}
-                    />
-                  </li>
-                ))}
+                <div>
+                  {campers.gallery?.map(image => (
+                    <li key={image.id}>
+                      <img
+                        src={image.original}
+                        alt={`Images ${camper.name}`}
+                        width={200}
+                      />
+                    </li>
+                  ))}
+                </div>
               </ul>
-              <p>{camper.description}</p>
+              <div>
+                <p>{camper.name}</p>
+                <p>{camper.price}</p>
+                <p>{camper.rating}</p>
+                <p>{camper.location}</p>
+                <p>{camper.description}</p>
+              </div>
             </li>
           );
         })}
       </ul>
-    </div>
+    </ContainerItems>
   );
 };

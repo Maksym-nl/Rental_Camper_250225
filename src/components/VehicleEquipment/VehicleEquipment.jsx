@@ -5,6 +5,8 @@ import {
   VehicleEquipmentList,
   VehicleEquipmentItem,
   VehicleEquipmentItemImage,
+  StyledButton,
+  BtnText,
 } from './VehicleEquipment.styled';
 
 import acIcon from '../../img/wind.svg';
@@ -20,47 +22,47 @@ export const VehicleEquipment = () => {
       <Line />
       <VehicleEquipmentList>
         <VehicleEquipmentItem>
-          <button type="button">
-            <div>
+          <StyledButton type="button">
+            <BtnText>
               <VehicleEquipmentItemImage src={acIcon} alt="Ac" />
-              <p>AC</p>
-            </div>
-          </button>
+              <>AC</>
+            </BtnText>
+          </StyledButton>
         </VehicleEquipmentItem>
         <VehicleEquipmentItem>
-          <button type="button">
-            <div>
+          <StyledButton type="button">
+            <BtnText>
               <VehicleEquipmentItemImage
                 src={transmissionIcon}
                 alt="Transmission"
               />
               <p>Transmission</p>
-            </div>
-          </button>
+            </BtnText>
+          </StyledButton>
         </VehicleEquipmentItem>
         <VehicleEquipmentItem>
-          <button type="button">
-            <div>
+          <StyledButton type="button">
+            <BtnText>
               <VehicleEquipmentItemImage src={KitchenIcon} alt="Kitchen" />
               <p>Kitchen</p>
-            </div>
-          </button>
+            </BtnText>
+          </StyledButton>
         </VehicleEquipmentItem>
         <VehicleEquipmentItem>
-          <button type="button">
-            <div>
+          <StyledButton type="button">
+            <BtnText>
               <VehicleEquipmentItemImage src={TvIcon} alt="TV" />
               <p>TV</p>
-            </div>
-          </button>
+            </BtnText>
+          </StyledButton>
         </VehicleEquipmentItem>
         <VehicleEquipmentItem>
-          <button type="button">
-            <div>
+          <StyledButton type="button">
+            <BtnText>
               <VehicleEquipmentItemImage src={BathroomIcon} alt="Bathroom" />
               <p>Bathroom</p>
-            </div>
-          </button>
+            </BtnText>
+          </StyledButton>
         </VehicleEquipmentItem>
       </VehicleEquipmentList>
     </VehicleEquipmentContainer>

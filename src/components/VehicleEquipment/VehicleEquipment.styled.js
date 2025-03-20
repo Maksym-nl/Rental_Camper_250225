@@ -25,27 +25,36 @@ export const VehicleEquipmentList = styled.ul`
   flex-wrap: wrap;
   flex-direction: row;
 `;
+
+export const VehicleEquipmentItemImage = styled.img`
+  margin-bottom: 12px;
+`;
 export const VehicleEquipmentItem = styled.li`
   display: flex;
-  gap: 8px;
+  display: contents;
+`;
+export const StyledButton = styled.button`
   width: 112px;
   height: 96px;
-  border-radius: 12px;
   border: 1px solid #dadde1;
-  flex-wrap: wrap;
-  align-content: center;
-  flex-direction: column;
+  border-radius: 12px;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  padding: 18px;
+  justify-content: center;
+  transition: all 0.3sease;
+
   &:hover,
   &:focus {
     border: 1px solid ${props => props.theme.colors['D84343']};
   }
+
   &:active {
-    transform: scale(0.98); // Слегка уменьшает размер кнопки при клике
+    transform: scale(0.98);
   }
 `;
-
-export const VehicleEquipmentItemImage = styled.img`
-  margin-bottom: 12px;
+export const BtnText = styled.div`
+  padding: 16px 32px;
 `;

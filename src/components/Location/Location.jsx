@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
-import { setFilter } from '../../redux/filterSlice';
-import { getFilter } from '../../redux/selectors';
+import { setLocation, setFilter } from '../../redux/filterSlice';
+import { getLocation } from '../../redux/selectors';
 import {
   LocationForm,
   Text,
@@ -13,10 +13,11 @@ import {
 
 export const Location = () => {
   const [input, setInput] = useState('');
+  const value = useSelector(getLocation);
   const dispatch = useDispatch();
 
   const onChange = e => {
-    dispatch(setFilter(e.target.value));
+    setInput(e.target.value);
   };
 
   const handleSubmit = e => {
@@ -25,27 +26,26 @@ export const Location = () => {
       toast('Write the city');
       return;
     }
-    onsubmit(input);
+
+    dispatch(setLocation(input));
   };
 
-  const value = useSelector(getFilter);
-
   return (
-    <LocationForm>
+    <LocationForm onSubmit={handleSubmit}>
       <Text>Location</Text>
-      <form onSubmit={handleSubmit}>
+      <div>
         <InputWrapper>
           <IconWrapper />
           <Input
             type="text"
             autoComplete="off"
             autoFocus
-            value={value}
+            value={input}
             placeholder="Search City"
             onChange={onChange}
           />
         </InputWrapper>
-      </form>
+      </div>
     </LocationForm>
   );
 };

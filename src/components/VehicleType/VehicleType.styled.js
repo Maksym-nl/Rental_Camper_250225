@@ -29,7 +29,7 @@ export const VehicleTypeList = styled.ul`
 `;
 export const VehicleTypeItem = styled.li`
   display: flex;
-  gap: 8px;
+  /* gap: 8px; */
   width: 112px;
   height: 96px;
   border-radius: 12px;
@@ -38,7 +38,8 @@ export const VehicleTypeItem = styled.li`
   align-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 18px;
+  justify-content: center;
+  cursor: pointer;
   &:hover,
   &:focus {
     border: 1px solid ${props => props.theme.colors['D84343']};
@@ -49,4 +50,7 @@ export const VehicleTypeItem = styled.li`
 `;
 export const VehicleTypeItemImage = styled.img`
   margin-bottom: 12px;
+`;
+export const BtnText = styled.div`
+  padding: 16px 32px;
 `;
