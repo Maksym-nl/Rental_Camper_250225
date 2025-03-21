@@ -8,6 +8,8 @@ export const filterSlice = createSlice({
   initialState: {
     location: '',
     form: ['panelTruck', 'fullyIntegrated', 'alcove'],
+    transmission: ['automatic', 'manual'],
+    engine: ['diesel', 'hybrid', 'petrol'],
     equpment: {
       AC: true,
       bathroom: true,
@@ -19,9 +21,7 @@ export const filterSlice = createSlice({
       gas: true,
       water: true,
     },
-    transmission: ['automatic', 'manual'],
   },
-  engine: ['diesel', 'hybrid', 'petrol'],
   reducers: {
     setFilter: (state, action) => {
       return action.payload;

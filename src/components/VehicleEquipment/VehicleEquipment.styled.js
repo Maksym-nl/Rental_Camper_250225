@@ -44,15 +44,17 @@ export const StyledButton = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: all 0.3sease;
+  transition: all 0.3 sease;
 
-  &:hover,
-  &:focus {
+  &:hover {
     border: 1px solid ${props => props.theme.colors['D84343']};
   }
 
   &:active {
     transform: scale(0.98);
+  }
+  &.select {
+    border: 1px solid ${props => props.theme.colors['D84343']};
   }
 `;
 export const BtnText = styled.div`

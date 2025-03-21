@@ -14,3 +14,9 @@ export const ListContainer = styled.div`
   flex-direction: column;
   gap: 32px;
 `;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+`;

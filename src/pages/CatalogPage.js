@@ -1,6 +1,10 @@
 import { CamperList } from 'components/CamperList/CamperList';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
-import { CatalogContainer, SearchContainer } from 'styles/CatalogPage.styled';
+import {
+  CatalogContainer,
+  SearchContainer,
+  ButtonContainer,
+} from 'styles/CatalogPage.styled';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 
 export default function CatalogPage({ children }) {
@@ -13,7 +17,9 @@ export default function CatalogPage({ children }) {
       </SearchContainer>
       <div>
         <CamperList />
-        <LoadMoreBtn />
+        <ButtonContainer>
+          <LoadMoreBtn />
+        </ButtonContainer>
       </div>
     </CatalogContainer>
   );

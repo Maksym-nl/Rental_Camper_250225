@@ -26,7 +26,23 @@ export const getFilterCampers = createSelector(
         filter.form.includes(camper.form)
       );
     }
-
+    if (filter.transmission.length > 0) {
+      filteredCars = filteredCars.filter(camper =>
+        filter.transmission.includes(camper.transmission)
+      );
+    }
+    if (filter.engine.length > 0) {
+      filteredCars = filteredCars.filter(camper =>
+        filter.engine.includes(camper.engine)
+      );
+    }
+    const keys = Object.keys(filter.equpment);
+    // console.log(keys);
+    if (keys.length > 0) {
+      filteredCars = filteredCars.filter(camper =>
+        keys.every(key => camper[key])
+      );
+    }
     return filteredCars;
   }
 );
