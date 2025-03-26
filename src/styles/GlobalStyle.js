@@ -3,9 +3,9 @@ import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0;
+    ${'' /* max-width: 1440px; */}
+    ${'' /* margin: 0 auto; */}
+    ${'' /* padding: 0; */}
     box-sizing: border-box;
    
   }

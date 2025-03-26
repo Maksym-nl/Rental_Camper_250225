@@ -59,4 +59,7 @@ export const StyledButton = styled.button`
 `;
 export const BtnText = styled.div`
   padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;

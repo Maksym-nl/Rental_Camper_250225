@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { theme } from './components/constants/theme';
 import { Container } from './components/Container/Container.styled';
-// import 'modern-normalize';
+import { ToastContainer } from 'react-toastify';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -18,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <GlobalStyle />
           <Container>
             <App />
+            <ToastContainer />
           </Container>
         </ThemeProvider>
       </BrowserRouter>

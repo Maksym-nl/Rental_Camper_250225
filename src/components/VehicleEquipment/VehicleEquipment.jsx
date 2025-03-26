@@ -17,32 +17,32 @@ import BathroomIcon from '../../img/ph_shower.svg';
 import { useState } from 'react';
 import omit from 'lodash.omit';
 
-export const VehicleEquipment = () => {
-  const [eqipment, setEqupment] = useState({ transmission: [] });
-  const handleClick = (value, type) => {
-    if (type) {
-      if (eqipment[type].includes(value)) {
-        const filteredType = eqipment[type].filter(item => item !== value);
-        setEqupment(prevState => ({
-          ...prevState,
-          [type]: filteredType,
-        }));
-        return;
-      }
-      setEqupment(prevState => ({
-        ...prevState,
-        [type]: [...prevState[type], value],
-      }));
-      return;
-    }
-    if (eqipment[value]) {
-      const newEqipment = omit(eqipment, value);
-      setEqupment(newEqipment);
-      return;
-    }
-    setEqupment(prevState => ({ ...prevState, [value]: true }));
-  };
-  console.log(eqipment);
+export const VehicleEquipment = ({ equpment, handleClick, transmission }) => {
+  // const [eqipment, setEqupment] = useState({ transmission: [] });
+  // const handleClick = (value, type) => {
+  //   if (type) {
+  //     if (eqipment[type].includes(value)) {
+  //       const filteredType = eqipment[type].filter(item => item !== value);
+  //       setEqupment(prevState => ({
+  //         ...prevState,
+  //         [type]: filteredType,
+  //       }));
+  //       return;
+  //     }
+  //     setEqupment(prevState => ({
+  //       ...prevState,
+  //       [type]: [...prevState[type], value],
+  //     }));
+  //     return;
+  //   }
+  //   if (eqipment[value]) {
+  //     const newEqipment = omit(eqipment, value);
+  //     setEqupment(newEqipment);
+  //     return;
+  //   }
+  //   setEqupment(prevState => ({ ...prevState, [value]: true }));
+  // };
+  // console.log(eqipment);
   return (
     <VehicleEquipmentContainer>
       <VehicleEquipmentTitle>Vehicle equipment</VehicleEquipmentTitle>
@@ -51,8 +51,8 @@ export const VehicleEquipment = () => {
         <VehicleEquipmentItem>
           <StyledButton
             type="button"
-            className={eqipment['AC'] ? 'select' : ''}
-            onClick={() => handleClick('AC')}
+            className={equpment['AC'] ? 'select' : ''}
+            onClick={() => handleClick('AC', 'equpment')}
           >
             <BtnText>
               <VehicleEquipmentItemImage src={acIcon} alt="Ac" />
@@ -64,9 +64,7 @@ export const VehicleEquipment = () => {
           <StyledButton
             type="button"
             onClick={() => handleClick('automatic', 'transmission')}
-            className={
-              eqipment.transmission.includes('automatic') ? 'select' : ''
-            }
+            className={transmission.includes('automatic') ? 'select' : ''}
           >
             <BtnText>
               <VehicleEquipmentItemImage
@@ -81,7 +79,7 @@ export const VehicleEquipment = () => {
           <StyledButton
             type="button"
             onClick={() => handleClick('manual', 'transmission')}
-            className={eqipment.transmission.includes('manual') ? 'select' : ''}
+            className={transmission.includes('manual') ? 'select' : ''}
           >
             <BtnText>
               <VehicleEquipmentItemImage
@@ -95,8 +93,8 @@ export const VehicleEquipment = () => {
         <VehicleEquipmentItem>
           <StyledButton
             type="button"
-            onClick={() => handleClick('kitchen')}
-            className={eqipment['kitchen'] ? 'select' : ''}
+            onClick={() => handleClick('kitchen', 'equpment')}
+            className={equpment['kitchen'] ? 'select' : ''}
           >
             <BtnText>
               <VehicleEquipmentItemImage src={KitchenIcon} alt="Kitchen" />
@@ -107,8 +105,8 @@ export const VehicleEquipment = () => {
         <VehicleEquipmentItem>
           <StyledButton
             type="button"
-            onClick={() => handleClick('TV')}
-            className={eqipment['TV'] ? 'select' : ''}
+            onClick={() => handleClick('TV', 'equpment')}
+            className={equpment['TV'] ? 'select' : ''}
           >
             <BtnText>
               <VehicleEquipmentItemImage src={TvIcon} alt="TV" />
@@ -119,8 +117,8 @@ export const VehicleEquipment = () => {
         <VehicleEquipmentItem>
           <StyledButton
             type="button"
-            onClick={() => handleClick('bathroom')}
-            className={eqipment['bathroom'] ? 'select' : ''}
+            onClick={() => handleClick('bathroom', 'equpment')}
+            className={equpment['bathroom'] ? 'select' : ''}
           >
             <BtnText>
               <VehicleEquipmentItemImage src={BathroomIcon} alt="bathroom" />

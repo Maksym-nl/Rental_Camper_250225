@@ -11,27 +11,27 @@ import {
   IconWrapper,
 } from './Location.styled';
 
-export const Location = () => {
-  const [input, setInput] = useState('');
-  const value = useSelector(getLocation);
-  const dispatch = useDispatch();
+export const Location = ({ location, onChange }) => {
+  // const [input, setInput] = useState('');
+  // const value = useSelector(getLocation);
+  // const dispatch = useDispatch();
 
-  const onChange = e => {
-    setInput(e.target.value);
-  };
+  // const onChange = e => {
+  //   setInput(e.target.value);
+  // };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (input.trim() === '') {
-      toast('Write the city');
-      return;
-    }
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   if (input.trim() === '') {
+  //     toast('Write the city');
+  //     return;
+  //   }
 
-    dispatch(setLocation(input));
-  };
+  //   dispatch(setLocation(input));
+  // };
 
   return (
-    <LocationForm onSubmit={handleSubmit}>
+    <div>
       <Text>Location</Text>
       <div>
         <InputWrapper>
@@ -40,12 +40,12 @@ export const Location = () => {
             type="text"
             autoComplete="off"
             autoFocus
-            value={input}
+            value={location}
             placeholder="Search City"
-            onChange={onChange}
+            onChange={e => onChange(e.target.value, 'location')}
           />
         </InputWrapper>
       </div>
-    </LocationForm>
+    </div>
   );
 };

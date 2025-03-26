@@ -36,13 +36,18 @@ export const getFilterCampers = createSelector(
         filter.engine.includes(camper.engine)
       );
     }
-    const keys = Object.keys(filter.equpment);
-    // console.log(keys);
-    if (keys.length > 0) {
+
+    // Фильтрация по оборудованию
+    const activeEquipment = Object.entries(filter.equpment)
+      .filter(([_, value]) => value === true)
+      .map(([key]) => key);
+
+    if (activeEquipment.length > 0) {
       filteredCars = filteredCars.filter(camper =>
-        keys.every(key => camper[key])
+        activeEquipment.every(key => camper[key])
       );
     }
+
     return filteredCars;
   }
 );

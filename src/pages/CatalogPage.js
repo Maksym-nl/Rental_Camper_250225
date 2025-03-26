@@ -4,6 +4,7 @@ import {
   CatalogContainer,
   SearchContainer,
   ButtonContainer,
+  CamperListContainer,
 } from 'styles/CatalogPage.styled';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 
@@ -15,12 +16,12 @@ export default function CatalogPage({ children }) {
       <SearchContainer>
         <SearchBar />
       </SearchContainer>
-      <div>
+      <CamperListContainer>
         <CamperList />
         <ButtonContainer>
           <LoadMoreBtn />
         </ButtonContainer>
-      </div>
+      </CamperListContainer>
     </CatalogContainer>
   );
 }
