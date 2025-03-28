@@ -8,6 +8,8 @@ export const getLocation = state => state.filter.location;
 
 export const getEquipment = state => state.filter.equpment;
 
+export const getFavorites = state => state.favorites.items;
+
 export const getFilterCampers = createSelector(
   [getCampers, getFilter],
   (items, filter) => {
@@ -36,18 +38,13 @@ export const getFilterCampers = createSelector(
         filter.engine.includes(camper.engine)
       );
     }
-
-    // Фильтрация по оборудованию
-    const activeEquipment = Object.entries(filter.equpment)
-      .filter(([_, value]) => value === true)
-      .map(([key]) => key);
-
-    if (activeEquipment.length > 0) {
+    const keys = Object.keys(filter.equpment);
+    // console.log(keys);
+    if (keys.length > 0) {
       filteredCars = filteredCars.filter(camper =>
-        activeEquipment.every(key => camper[key])
+        keys.every(key => camper[key])
       );
     }
-
     return filteredCars;
   }
 );

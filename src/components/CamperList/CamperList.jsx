@@ -1,143 +1,134 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
-import { useSelector } from 'react-redux';
-import { getFilterCampers } from '../../redux/selectors';
+import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
+import { useSelector, useDispatch } from 'react-redux';
+import { getFilterCampers, getFavorites } from '../../redux/selectors';
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from '../../redux/favoritesSlice';
 import HeartIcon from '../../img/heart.svg';
 import StarIcon from '../../img/Property 1=Pressed.svg';
 import MapIcon from '../../img/Map.svg';
+import transmissionIcon from '../../img/diagram.svg';
 import {
-  CamperListContainer,
-  CamperItem,
-  CamperItemImage,
-  CamperImgWrapper,
-  CamperItemInfo,
-  CamperItemInfoTitle,
-  CamperItemInfoPrice,
+  CamperListItem,
+  CamperListItemImage,
+  CamperListItemInfo,
+  CamperListItemInfoTitle,
+  CamperListItemInfoPrice,
   CamperListRetingLocale,
   StarImg,
   RetingWrapper,
   LocationWrapper,
+  LoadMoreContainer,
+  CategoryWrapper,
+  ShowMoreContainer,
+  FavoriteButton,
 } from './CamperList.styled';
-
-// export const CamperList = () => {
-//   const campers = useSelector(getFilterCampers);
-//   const location = useLocation();
-//   console.log(campers.length);
-//   return (
-//     <CamperListContainer>
-//       <ul>
-//         {campers.map(camper => {
-//           return (
-//             <CamperItem key={camper.id}>
-//               <CamperImgWrapper>
-//                 <CamperItemImage
-//                   src={camper.gallery[0].thumb}
-//                   alt={camper.name}
-//                 />
-//               </CamperImgWrapper>
-//               <div>
-//                 <h3>{camper.name}</h3>
-//                 <p>{camper.rating}</p>
-//                 <div>
-//                 <p>{camper.location}</p>
-//                 <p>{camper.description}</p>
-//                 <ul>
-//                   <li>
-//                     <p>Automatic</p>
-//                   </li>
-//                   <li>
-//                     <p>AC</p>
-//                   </li>
-//                   <li>
-//                     <p>Petrol</p>
-//                   </li>
-//                   <li>
-//                     <p>Kitchen</p>
-//                   </li>
-//                   <li>
-//                     <p>Bathroom</p>
-//                   </li>
-//                 </ul>
-//               </div>
-//               <Link to={`/campers/${camper.id}`} state={{ from: location }}>
-//                 <ShowMoreBtn />
-//               </Link>
-//             </CamperItem>
-//           );
-//         })}
-//       </ul>
-//     </CamperListContainer>
-//   );
-// };
+import { Categories } from 'components/Categories/Categories';
 
 export const CamperList = () => {
   const campers = useSelector(getFilterCampers);
-  console.log(campers);
+  const favorites = useSelector(getFavorites);
+  const dispatch = useDispatch();
   const location = useLocation();
-  // console.log(campers.length);
+  const [camperCount, setCamperCount] = useState(5);
+
+  const handleLoadMore = () => {
+    setCamperCount(prev => prev + 5);
+  };
+
+  const handleFavoriteClick = camper => {
+    const isFavorite = favorites.some(fav => fav.id === camper.id);
+    if (isFavorite) {
+      dispatch(removeFromFavorites(camper.id));
+    } else {
+      dispatch(addToFavorites(camper));
+    }
+  };
+
   return (
     <div>
       <ul>
-        {campers.map(camper => {
+        {campers.slice(0, camperCount).map(camper => {
+          const isFavorite = favorites.some(fav => fav.id === camper.id);
           return (
-            <CamperItem key={camper.id}>
+            <CamperListItem key={camper.id}>
               <div>
-                <CamperItemImage
+                <CamperListItemImage
                   src={camper.gallery[0].thumb}
                   alt={camper.name}
                 />
               </div>
-              <CamperItemInfo>
-                <CamperItemInfoTitle>
-                  <li>
+              <CamperListItemInfo>
+                <CamperListItemInfoTitle>
+                  <div>
                     <p>{camper.name}</p>
-                  </li>
-                  <CamperItemInfoPrice>
-                    <li>
-                      <p>${camper.price} </p>
-                    </li>
-                    <li>
-                      <button type="button">
+                  </div>
+                  <CamperListItemInfoPrice>
+                    <div>
+                      <p>€{camper.price.toFixed(2)}</p>
+                    </div>
+                    <div>
+                      <FavoriteButton
+                        type="button"
+                        onClick={() => handleFavoriteClick(camper)}
+                        className={isFavorite ? 'active' : ''}
+                      >
                         <img src={HeartIcon} alt="heart" />
-                      </button>
-                    </li>
-                  </CamperItemInfoPrice>
-                </CamperItemInfoTitle>
+                      </FavoriteButton>
+                    </div>
+                  </CamperListItemInfoPrice>
+                </CamperListItemInfoTitle>
                 <CamperListRetingLocale>
                   <RetingWrapper>
-                    <li>
+                    <div>
                       <StarImg src={StarIcon} alt="StarIcon" />
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                       <p>{camper.rating}</p>
-                    </li>
-                    <li>
+                    </div>
+                    <div>
                       <p>({camper.reviews.length} Reviews)</p>
-                    </li>
+                    </div>
                   </RetingWrapper>
                   <div>
                     <LocationWrapper>
-                      <li>
+                      <div>
                         <img src={MapIcon} alt={location} />
-                      </li>
-                      <li>
+                      </div>
+                      <div>
                         <p>{camper.location}</p>
-                      </li>
+                      </div>
                     </LocationWrapper>
                   </div>
                 </CamperListRetingLocale>
-                <p>
-                  {camper.description.length > 60
-                    ? camper.description.slice(0, 60) + '...'
-                    : camper.description}
-                </p>
-              </CamperItemInfo>
-            </CamperItem>
+                <div>
+                  <p>
+                    {camper.description.length > 60
+                      ? camper.description.slice(0, 60) + '...'
+                      : camper.description}
+                  </p>
+                </div>
+                <Categories />
+                <ShowMoreContainer>
+                  <ShowMoreBtn />
+                </ShowMoreContainer>
+              </CamperListItemInfo>
+            </CamperListItem>
           );
         })}
       </ul>
+      {campers.length > camperCount ? (
+        <LoadMoreContainer>
+          <LoadMoreBtn onClick={handleLoadMore} />
+        </LoadMoreContainer>
+      ) : (
+        <ScrollToTop />
+      )}
     </div>
   );
 };

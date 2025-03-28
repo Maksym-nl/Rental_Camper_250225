@@ -14,35 +14,10 @@ import transmissionIcon from '../../img/diagram.svg';
 import KitchenIcon from '../../img/cup-hot.svg';
 import TvIcon from '../../img/tv.svg';
 import BathroomIcon from '../../img/ph_shower.svg';
-import { useState } from 'react';
-import omit from 'lodash.omit';
+// import { useState } from 'react';
+// import omit from 'lodash.omit';
 
 export const VehicleEquipment = ({ equpment, handleClick, transmission }) => {
-  // const [eqipment, setEqupment] = useState({ transmission: [] });
-  // const handleClick = (value, type) => {
-  //   if (type) {
-  //     if (eqipment[type].includes(value)) {
-  //       const filteredType = eqipment[type].filter(item => item !== value);
-  //       setEqupment(prevState => ({
-  //         ...prevState,
-  //         [type]: filteredType,
-  //       }));
-  //       return;
-  //     }
-  //     setEqupment(prevState => ({
-  //       ...prevState,
-  //       [type]: [...prevState[type], value],
-  //     }));
-  //     return;
-  //   }
-  //   if (eqipment[value]) {
-  //     const newEqipment = omit(eqipment, value);
-  //     setEqupment(newEqipment);
-  //     return;
-  //   }
-  //   setEqupment(prevState => ({ ...prevState, [value]: true }));
-  // };
-  // console.log(eqipment);
   return (
     <VehicleEquipmentContainer>
       <VehicleEquipmentTitle>Vehicle equipment</VehicleEquipmentTitle>

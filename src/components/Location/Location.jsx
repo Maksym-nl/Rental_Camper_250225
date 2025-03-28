@@ -31,7 +31,7 @@ export const Location = ({ location, onChange }) => {
   // };
 
   return (
-    <div>
+    <LocationForm>
       <Text>Location</Text>
       <div>
         <InputWrapper>
@@ -46,6 +46,6 @@ export const Location = ({ location, onChange }) => {
           />
         </InputWrapper>
       </div>
-    </div>
+    </LocationForm>
   );
 };
