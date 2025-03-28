@@ -99,30 +99,30 @@ export const CategoryWrapper = styled.div`
 export const ShowMoreContainer = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-top: 24px;
+  /* margin-top: 24px; */
 `;
 
 export const FavoriteButton = styled.button`
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 8px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    /* transform: scale(1.1); */
+  }
 
   img {
     width: 24px;
     height: 24px;
-    opacity: 0.5;
-  }
-
-  &:hover {
-    transform: scale(1.1);
+    transition: filter 0.2s ease-in-out;
   }
 
   &.active {
     img {
-      opacity: 1;
-      filter: drop-shadow(0 0 2px ${props => props.theme.colors['E44848']});
+      filter: brightness(0) saturate(100%) invert(32%) sepia(98%)
+        saturate(1234%) hue-rotate(328deg) brightness(85%) contrast(101%);
     }
   }
 `;

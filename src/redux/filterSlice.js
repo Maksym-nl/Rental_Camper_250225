@@ -1,17 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 const initialState = {
   location: '',
   form: [],
+  transmission: [],
+  engine: [],
+  equipment: {},
 };
+
 export const filterSlice = createSlice({
   name: 'filter',
-  initialState: {
-    location: '',
-    form: [],
-    transmission: [],
-    engine: [],
-    equpment: {},
-  },
+  initialState,
   reducers: {
     setFilter: (state, action) => {
       return action.payload;
@@ -19,13 +18,16 @@ export const filterSlice = createSlice({
     setLocation: (state, action) => {
       state.location = action.payload;
     },
-    setEqupment: (state, action) => {
-      state.equpment = action.payload;
+    setEquipment: (state, action) => {
+      state.equipment = action.payload;
     },
     resetFilters: state => {
       return initialState;
     },
   },
 });
-export const { setFilter, setLocation, setEqupment, resetFilters } =
+
+export const { setFilter, setLocation, setEquipment, resetFilters } =
   filterSlice.actions;
+
+export default filterSlice.reducer;

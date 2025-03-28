@@ -1,17 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-// Получаем избранные машины из localStorage при инициализации
+//!Функция для загрузки избранного из localStorage
 const loadFavoritesFromStorage = () => {
   try {
     const favorites = localStorage.getItem('favorites');
-    return favorites ? JSON.parse(favorites) : [];
+    if (favorites) {
+      return JSON.parse(favorites);
+    } else {
+      return [];
+    }
   } catch (error) {
     console.error('Error loading favorites:', error);
     return [];
   }
 };
-
-// Сохраняем избранные машины в localStorage
+//!Функция для сохранения избранного в localStorage
 const saveFavoritesToStorage = favorites => {
   try {
     localStorage.setItem('favorites', JSON.stringify(favorites));
@@ -20,25 +22,25 @@ const saveFavoritesToStorage = favorites => {
   }
 };
 
-export const favoritesSlice = createSlice({
-  name: 'favorites',
-  initialState: {
-    items: loadFavoritesFromStorage(),
-  },
+const initialState = {
+  items: loadFavoritesFromStorage(),
+};
+export const favoriteSlice = createSlice({
+  name: 'favorite',
+  initialState,
   reducers: {
     addToFavorites: (state, action) => {
-      // Проверяем, нет ли уже этой машины в избранном
       if (!state.items.find(item => item.id === action.payload.id)) {
         state.items.push(action.payload);
         saveFavoritesToStorage(state.items);
       }
     },
-    removeFromFavorites: (state, action) => {
+    removeFavorites: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload);
       saveFavoritesToStorage(state.items);
     },
   },
 });
 
-export const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
-export default favoritesSlice.reducer;
+export const { addToFavorites, removeFavorites } = favoriteSlice.actions;
+export default favoriteSlice.reducer;

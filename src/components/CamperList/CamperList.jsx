@@ -5,14 +5,11 @@ import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
 import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
 import { useSelector, useDispatch } from 'react-redux';
 import { getFilterCampers, getFavorites } from '../../redux/selectors';
-import {
-  addToFavorites,
-  removeFromFavorites,
-} from '../../redux/favoritesSlice';
+import { addToFavorites, removeFavorites } from '../../redux/favoriteSlice';
 import HeartIcon from '../../img/heart.svg';
 import StarIcon from '../../img/Property 1=Pressed.svg';
 import MapIcon from '../../img/Map.svg';
-import transmissionIcon from '../../img/diagram.svg';
+import TransmissionIcon from '../../img/diagram.svg';
 import {
   CamperListItem,
   CamperListItemImage,
@@ -44,7 +41,7 @@ export const CamperList = () => {
   const handleFavoriteClick = camper => {
     const isFavorite = favorites.some(fav => fav.id === camper.id);
     if (isFavorite) {
-      dispatch(removeFromFavorites(camper.id));
+      dispatch(removeFavorites(camper.id));
     } else {
       dispatch(addToFavorites(camper));
     }

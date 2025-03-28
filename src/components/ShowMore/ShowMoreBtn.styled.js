@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ShMoreBtn = styled.button`
   font-size: 16px;
+  margin-top: 16px;
   background-color: ${p => p.theme.colors['E44848']};
   color: ${p => p.theme.colors['FFFFFF']};
   padding: ${p => p.theme.spacing(4)} ${p => p.theme.spacing(15)};
