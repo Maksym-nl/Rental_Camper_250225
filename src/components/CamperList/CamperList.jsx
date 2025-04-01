@@ -47,7 +47,7 @@ export const CamperList = () => {
       dispatch(addToFavorites(camper));
     }
   };
-  const handleButtonClick = id => {
+  const handleShowMoreClick = id => {
     navigate(`/campers/${id}`);
   };
   return (
@@ -115,7 +115,7 @@ export const CamperList = () => {
                 </div>
                 <Categories />
                 <ShowMoreContainer>
-                  <ShowMoreBtn onClick={() => handleButtonClick(camper.id)} />
+                  <ShowMoreBtn onClick={() => handleShowMoreClick(camper.id)} />
                 </ShowMoreContainer>
               </CamperListItemInfo>
             </CamperListItem>
