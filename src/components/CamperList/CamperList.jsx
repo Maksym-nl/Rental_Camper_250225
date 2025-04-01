@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { LoadMoreBtn } from 'components/LoadMoreBtn/LoadMoreBtn';
 import { ShowMoreBtn } from 'components/ShowMore/ShowMore';
 import { ScrollToTop } from 'components/ScrollToTop/ScrollToTop';
@@ -9,7 +9,7 @@ import { addToFavorites, removeFavorites } from '../../redux/favoriteSlice';
 import HeartIcon from '../../img/heart.svg';
 import StarIcon from '../../img/Property 1=Pressed.svg';
 import MapIcon from '../../img/Map.svg';
-import TransmissionIcon from '../../img/diagram.svg';
+// import TransmissionIcon from '../../img/diagram.svg';
 import {
   CamperListItem,
   CamperListItemImage,
@@ -21,7 +21,7 @@ import {
   RetingWrapper,
   LocationWrapper,
   LoadMoreContainer,
-  CategoryWrapper,
+  // CategoryWrapper,
   ShowMoreContainer,
   FavoriteButton,
 } from './CamperList.styled';
@@ -32,6 +32,7 @@ export const CamperList = () => {
   const favorites = useSelector(getFavorites);
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
   const [camperCount, setCamperCount] = useState(5);
 
   const handleLoadMore = () => {
@@ -46,7 +47,9 @@ export const CamperList = () => {
       dispatch(addToFavorites(camper));
     }
   };
-
+  const handleButtonClick = id => {
+    navigate(`/campers/${id}`);
+  };
   return (
     <div>
       <ul>
@@ -112,7 +115,7 @@ export const CamperList = () => {
                 </div>
                 <Categories />
                 <ShowMoreContainer>
-                  <ShowMoreBtn />
+                  <ShowMoreBtn onClick={() => handleButtonClick(camper.id)} />
                 </ShowMoreContainer>
               </CamperListItemInfo>
             </CamperListItem>
