@@ -1,5 +1,3 @@
-import { useSelector } from 'react-redux';
-import { getFilterCampers } from '../../redux/selectors';
 import { useState, useEffect } from 'react';
 import acIcon from '../../img/wind.svg';
 import transmissionIcon from '../../img/diagram.svg';
@@ -16,6 +14,7 @@ import {
   CategoryItem,
   CategoryItemImage,
 } from './Categories.styled';
+
 // Список ключей, которые мы хотим отображать
 const categoriesCamper = [
   'transmission',
@@ -28,33 +27,35 @@ const categoriesCamper = [
   'gas',
   'water',
 ];
+
 const categoryIcons = {
   transmission: transmissionIcon,
-
   AC: acIcon,
   bathroom: BathroomIcon,
   kitchen: KitchenIcon,
   TV: TvIcon,
   radio: RadioIcon,
-
   microwave: MicrowaveIcon,
   gas: GasIcon,
   water: WaterIcon,
 };
 
-export const Categories = () => {
-  const campers = useSelector(getFilterCampers);
+export const Categories = ({ camper }) => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    if (campers.length > 0) {
-      // Для каждого кампера фильтруем только нужные ключи
-      const filteredCategories = categoriesCamper.filter(key =>
-        campers.some(camper => camper.hasOwnProperty(key))
+    if (camper) {
+      // Фильтруем категории, которые есть у конкретного кемпера
+      const filteredCategories = categoriesCamper.filter(
+        key => camper.hasOwnProperty(key) && camper[key]
       );
       setCategories(filteredCategories);
     }
-  }, [campers]);
+  }, [camper]);
+
+  if (!camper) {
+    return null;
+  }
 
   return (
     <CategoryWrapper>

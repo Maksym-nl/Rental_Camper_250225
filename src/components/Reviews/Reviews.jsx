@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCamperById } from 'api/api';
-export default function Reviews() {
+
+const Reviews = () => {
   const [reviews, setReviews] = useState([]);
   const params = useParams();
   useEffect(() => {
@@ -28,4 +29,5 @@ export default function Reviews() {
       </ul>
     </div>
   );
-}
+};
+export default Reviews;

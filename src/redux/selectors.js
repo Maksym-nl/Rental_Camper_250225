@@ -9,6 +9,10 @@ export const getLocation = state => state.filter.location;
 export const getEquipment = state => state.filter.equipment;
 
 export const getFavorites = state => state.favorites.items;
+// Селектор для получения данных о конкретном кемпере
+export const getCamperById = state => state.camperById.camper;
+export const getCamperLoading = state => state.camperById.isLoading;
+export const getCamperError = state => state.camperById.error;
 
 export const getFilterCampers = createSelector(
   [getCampers, getFilter],

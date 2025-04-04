@@ -1,9 +1,24 @@
 import { useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { clearCamperDetails } from '../../redux/camperSliceById';
+import { Outlet } from 'react-router-dom';
+import { clearCamperDetails } from '../../redux/operation';
 import { fetchCamperById } from '../../redux/operation';
 import { Loader } from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
+import StarImg from '../../img/Property 1=Pressed.svg';
+import MapIcon from '../../img/Map.svg';
+// import DefaultCamper from '../../img/default-img.svg';
+import {
+  ContainerItems,
+  Title,
+  List,
+  Item,
+  ListImg,
+  Img,
+  Description,
+  LinkContainer,
+  Line,
+  StyledNavLink,
+} from './CamperItem.styled';
 
 export const CamperItem = ({ id }) => {
   const dispatch = useDispatch();
@@ -32,26 +47,41 @@ export const CamperItem = ({ id }) => {
   }
 
   return (
-    <div>
-      <h2>{camper.name}</h2>
-      <p>{camper.rating}</p>
-      <p>{camper.location}</p>
-      <ul>
+    <ContainerItems>
+      <Title>{camper.name}</Title>
+      <List>
+        <Item>
+          <img src={StarImg} alt={StarImg} />
+          {camper.rating}({camper.reviews.length} Reviews)
+          <img src={MapIcon} alt={MapIcon} />
+          {camper.location}
+        </Item>
+      </List>
+
+      <ListImg>
         {camper.gallery?.map(image => {
           return (
             <li key={image.id}>
-              <img src={image.original} alt={camper.name} width={200} />
+              <Img src={image.original} alt={camper.name} />
             </li>
           );
         })}
-      </ul>
-      <p>{camper.description}</p>
+        {/* <li>
+          <Img src={DefaultCamper} alt={camper.name} />
+        </li> */}
+      </ListImg>
+      <Description>{camper.description}</Description>
 
-      <div>
-        <Link to="features">Features</Link>
-        <Link to="reviews">Reviews</Link>
-      </div>
+      <LinkContainer>
+        <li>
+          <StyledNavLink to="features">Features</StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="reviews">Reviews</StyledNavLink>
+        </li>
+      </LinkContainer>
+      <Line />
       <Outlet />
-    </div>
+    </ContainerItems>
   );
 };

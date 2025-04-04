@@ -25,3 +25,10 @@ export const fetchCamperById = createAsyncThunk(
     }
   }
 );
+
+export const clearCamperDetails = createAsyncThunk(
+  'camperById/clearCamperDetails',
+  async () => {
+    return null;
+  }
+);

@@ -113,7 +113,7 @@ export const CamperList = () => {
                       : camper.description}
                   </p>
                 </div>
-                <Categories />
+                <Categories camper={camper} />
                 <ShowMoreContainer>
                   <ShowMoreBtn onClick={() => handleShowMoreClick(camper.id)} />
                 </ShowMoreContainer>
