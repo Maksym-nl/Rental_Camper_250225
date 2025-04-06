@@ -5,7 +5,7 @@ export const CategoryWrapper = styled.div`
   flex-direction: column;
   /* width: 581px; */
   gap: 10px;
-  outline: 1px solid red;
+  outline: 5px solid blue;
   margin: 0;
   padding: 0;
 `;
@@ -19,7 +19,7 @@ export const CategoryList = styled.ul`
   flex-wrap: wrap;
 `;
 export const CategoryItem = styled.li`
-  background-color: ${props => props.theme.colors['DADDE1']};
+  background-color: ${props => props.theme.colors['F2F4F7']};
   /* outline: 1px solid; */
   border-radius: 100px;
   padding: 8px 12px;

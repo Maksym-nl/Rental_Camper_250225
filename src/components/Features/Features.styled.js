@@ -1,5 +1,10 @@
 import styled from 'styled-components';
-// import { Categories } from 'components/Categories/Categories';
+
+export const FeaturesWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const FeaturesContainer = styled.div`
   display: flex;
   margin: 0;
@@ -11,15 +16,10 @@ export const FeaturesContainer = styled.div`
   padding-top: 44px;
   padding-bottom: 44px;
   border-radius: 10px;
+  outline: 3px solid green;
 `;
-// export const CategoriesWrapper = styled.div`
-//   display: flex;
-//   margin: 0;
-//   padding: 0;
-//   justify-content: flex-start;
-//   outline: 2px solid blue;
 
-//   & li {
-//     /* background-color: ${props => props.theme.colors['F2F4F7']}; */
-//   }
+// export const FeaturesContent = styled.div`
+//   flex: 1;
+//   min-width: 300px;
 // `;
