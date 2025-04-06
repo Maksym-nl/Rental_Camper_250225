@@ -25,7 +25,17 @@ export const fetchCamperById = createAsyncThunk(
     }
   }
 );
-
+export const fetchReviews = createAsyncThunk(
+  'reviews/fetchReviews',
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`/campers/${id}`);
+      return response.data.reviews || [];
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 export const clearCamperDetails = createAsyncThunk(
   'camperById/clearCamperDetails',
   async () => {
