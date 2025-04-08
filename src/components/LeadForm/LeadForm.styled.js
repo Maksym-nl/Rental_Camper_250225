@@ -9,22 +9,26 @@ export const FormWrapper = styled.div`
   outline: 3px solid blue;
   /* margin-left: auto; Добавляем отступ слева, чтобы прижать форму вправо */
 `;
+
 export const Title = styled.h3`
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 8px;
 `;
+
 export const Text = styled.p`
   line-height: 1.5;
   margin-bottom: 8px;
 `;
+
 export const FormStyled = styled(Form)`
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
   gap: 10px;
 `;
+
 export const Input = styled(Field)`
   width: 100%;
   padding-top: 18px;
@@ -87,4 +91,9 @@ export const Button = styled.button`
   &:active {
     transform: scale(0.98); // Слегка уменьшает размер кнопки при клике
   }
+`;
+
+export const DatePickerWrapper = styled.div`
+  position: relative;
+  width: 100%;
 `;

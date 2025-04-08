@@ -17,3 +17,7 @@ export const fetchCamperByIdSuccess = createAction(
 );
 //rejected
 export const fetchCamperByIdError = createAction('camper/fetchCamperByIdError');
+// Действия для загрузки отзывов
+export const fetchReviewsRequest = createAction('reviews/fetchReviewsRequest');
+export const fetchReviewsSuccess = createAction('reviews/fetchReviewsSuccess');
+export const fetchReviewsError = createAction('reviews/fetchReviewsError');
