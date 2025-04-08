@@ -13,10 +13,15 @@ export const getFavorites = state => state.favorites.items;
 export const getCamperById = state => state.camperById.camper;
 export const getCamperLoading = state => state.camperById.isLoading;
 export const getCamperError = state => state.camperById.error;
-// Новые селекторы для отдельного slice отзывов
+//Новые селекторы для отдельного slice отзывов
 export const getReviewsState = state => state.reviews.reviews;
 export const getReviewsLoading = state => state.reviews.isLoading;
 export const getReviewsError = state => state.reviews.error;
+
+//Селекторы для рейтинга
+export const getReting = state => state.reting.reting;
+export const getRetingLoading = state => state.reting.isLoading;
+export const getRetingError = state => state.reting.error;
 
 export const getFilterCampers = createSelector(
   [getCampers, getFilter],

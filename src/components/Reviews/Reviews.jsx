@@ -7,7 +7,7 @@ import { LeadForm } from 'components/LeadForm/LeadForm';
 import HalfRating from 'components/StarsReting/HalfRating';
 import LetterAvatars from 'components/Avatar/Avatar';
 import { Container, ReviewsList } from './Reviews.styled';
-
+import { Loader } from 'components/Loader/Loader';
 const Reviews = () => {
   const { id } = useParams(); // Получаем id из URL
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const Reviews = () => {
   }, [dispatch, id]);
 
   if (isLoading) {
-    return <div>Загрузка отзывов...</div>;
+    return <Loader />;
   }
 
   return (
@@ -32,11 +32,11 @@ const Reviews = () => {
       <ReviewsList>
         {reviews.length > 0 ? (
           reviews.map(review => (
-            <li key={review.id || Math.random()}>
+            <li key={review.id}>
               <LetterAvatars reviewerName={review.reviewer_name} />
               <div>
                 <h3>{review.reviewer_name || 'Аноним'}</h3>
-                <HalfRating rating={review.rating || 0} />
+                <HalfRating rating={review.reviewer_rating || 0} />
               </div>
               <p>{review.comment || 'Без комментария'}</p>
             </li>

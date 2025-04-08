@@ -21,3 +21,12 @@ export const fetchCamperByIdError = createAction('camper/fetchCamperByIdError');
 export const fetchReviewsRequest = createAction('reviews/fetchReviewsRequest');
 export const fetchReviewsSuccess = createAction('reviews/fetchReviewsSuccess');
 export const fetchReviewsError = createAction('reviews/fetchReviewsError');
+
+// // Действия для загрузки рейтинга
+// export const fetchRetingRequest = createAction('reting/fetchRetingRequest');
+// export const fetchRetingSuccess = createAction('reting/fetchRetingSuccess');
+// export const fetchRetingError = createAction('reting/fetchRetingError');
+
+// Действия для работы с рейтингами рецензентов
+export const setReviewerRating = createAction('reting/setReviewerRating');
+export const updateReviewerRating = createAction('reting/updateReviewerRating');

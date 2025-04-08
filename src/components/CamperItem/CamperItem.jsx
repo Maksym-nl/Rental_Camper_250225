@@ -57,7 +57,9 @@ export const CamperItem = ({ id }) => {
           {camper.location}
         </Item>
       </List>
-
+      <div>
+        <p>€{camper.price.toFixed(2)}</p>
+      </div>
       <ListImg>
         {camper.gallery?.map(image => {
           return (
@@ -66,9 +68,6 @@ export const CamperItem = ({ id }) => {
             </li>
           );
         })}
-        {/* <li>
-          <Img src={DefaultCamper} alt={camper.name} />
-        </li> */}
       </ListImg>
       <Description>{camper.description}</Description>
 
