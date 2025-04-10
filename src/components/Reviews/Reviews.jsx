@@ -6,10 +6,18 @@ import { getReviewsState, getReviewsLoading } from '../../redux/selectors';
 import { LeadForm } from 'components/LeadForm/LeadForm';
 import HalfRating from 'components/StarsReting/HalfRating';
 import LetterAvatars from 'components/Avatar/Avatar';
-import { Container, ReviewsList } from './Reviews.styled';
+import {
+  Container,
+  ReviewsList,
+  ReviewItem,
+  ReviewName,
+  ReviewNameContainer,
+  ReviewComment,
+} from './Reviews.styled';
 import { Loader } from 'components/Loader/Loader';
+
 const Reviews = () => {
-  const { id } = useParams(); // Получаем id из URL
+  const { id } = useParams();
   const dispatch = useDispatch();
   const reviewsData = useSelector(getReviewsState);
   const isLoading = useSelector(getReviewsLoading);
@@ -32,17 +40,21 @@ const Reviews = () => {
       <ReviewsList>
         {reviews.length > 0 ? (
           reviews.map(review => (
-            <li key={review.id}>
+            <ReviewItem key={review.id}>
               <LetterAvatars reviewerName={review.reviewer_name} />
-              <div>
-                <h3>{review.reviewer_name || 'Аноним'}</h3>
+              <ReviewNameContainer>
+                <ReviewName>{review.reviewer_name || 'Аноним'}</ReviewName>
                 <HalfRating rating={review.reviewer_rating || 0} />
+              </ReviewNameContainer>
+              <div>
+                <ReviewComment>
+                  {review.comment || 'Без комментария'}
+                </ReviewComment>
               </div>
-              <p>{review.comment || 'Без комментария'}</p>
-            </li>
+            </ReviewItem>
           ))
         ) : (
-          <li>Отзывов пока нет</li>
+          <ReviewComment>Отзывов пока нет</ReviewComment>
         )}
       </ReviewsList>
 

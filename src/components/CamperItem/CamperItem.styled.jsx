@@ -25,7 +25,15 @@ export const Item = styled.li`
   gap: 8px;
   align-items: center;
   margin-top: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+`;
+export const PriceContainer = styled.div`
+  margin-bottom: 20px;
+`;
+export const Price = styled.p`
+  font-size: 24px;
+  line-height: 1.33;
+  font-weight: 600;
 `;
 export const ListImg = styled.ul`
   display: flex;

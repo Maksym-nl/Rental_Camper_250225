@@ -6,7 +6,8 @@ import { Loader } from 'components/Loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import StarImg from '../../img/Property 1=Pressed.svg';
 import MapIcon from '../../img/Map.svg';
-// import DefaultCamper from '../../img/default-img.svg';
+import DefaultCamper from '../../img/default-camper.jpg';
+
 import {
   ContainerItems,
   Title,
@@ -18,12 +19,14 @@ import {
   LinkContainer,
   Line,
   StyledNavLink,
+  PriceContainer,
+  Price,
 } from './CamperItem.styled';
 
 export const CamperItem = ({ id }) => {
   const dispatch = useDispatch();
   const { camper, isLoading, error } = useSelector(state => state.camperById);
-
+  // const [ImgError, setImgError] = useState(false);
   useEffect(() => {
     dispatch(fetchCamperById(id));
     return () => {
@@ -57,14 +60,14 @@ export const CamperItem = ({ id }) => {
           {camper.location}
         </Item>
       </List>
-      <div>
-        <p>€{camper.price.toFixed(2)}</p>
-      </div>
+      <PriceContainer>
+        <Price>€{camper.price.toFixed(2)}</Price>
+      </PriceContainer>
       <ListImg>
         {camper.gallery?.map(image => {
           return (
             <li key={image.id}>
-              <Img src={image.original} alt={camper.name} />
+              <Img src={image.original || DefaultCamper} alt={camper.name} />
             </li>
           );
         })}
