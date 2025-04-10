@@ -5,7 +5,6 @@ export const CategoryWrapper = styled.div`
   flex-direction: column;
   /* width: 581px; */
   gap: 10px;
-  outline: 5px solid blue;
   margin: 0;
   padding: 0;
 `;
@@ -42,4 +41,12 @@ export const CategoryItemImage = styled.div`
 
 export const Icon = styled.img`
   width: 20px;
+`;
+
+export const FeaturesCamperByIdWrapper = styled.div`
+  /* outline: 5px solid blue; */
+`;
+
+export const FeaturesCamperByIdList = styled.ul`
+  /* outline: 1px solid; */
 `;

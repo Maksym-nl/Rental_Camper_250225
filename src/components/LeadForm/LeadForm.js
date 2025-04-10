@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik } from 'formik';
+import BasicDatePicker from '../DataPicer/DataPicer';
 import {
   FormWrapper,
   FormStyled,
@@ -8,25 +9,37 @@ import {
   Input,
   TextArea,
   Button,
+  SuccessMessage,
 } from './LeadForm.styled';
 
 const initialValue = {
   name: '',
   email: '',
-  bookingData: '',
+  bookingData: null,
   comment: '',
 };
 
 export const LeadForm = () => {
+  const [showSuccess, setShowSuccess] = useState(false);
+
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
     resetForm();
+    setShowSuccess(true);
+    setTimeout(() => {
+      setShowSuccess(false);
+    }, 3000);
   };
 
   return (
     <FormWrapper>
       <Title>Book your campervan now</Title>
       <Text>Stay connected! We are always ready to help you.</Text>
+      {showSuccess && (
+        <SuccessMessage>
+          Форма успешно отправлена! Спасибо за ваш запрос.
+        </SuccessMessage>
+      )}
       <Formik initialValues={initialValue} onSubmit={handleSubmit}>
         {({ setFieldValue, values }) => (
           <FormStyled autoComplete="off">
@@ -37,10 +50,9 @@ export const LeadForm = () => {
               <Input type="text" name="email" placeholder="Email *" />
             </label>
             <label htmlFor="bookingData">
-              <Input
-                type="text"
-                name="bookingData"
-                placeholder="Booking data *"
+              <BasicDatePicker
+                value={values.bookingData}
+                onChange={newValue => setFieldValue('bookingData', newValue)}
               />
             </label>
             <label htmlFor="comment">

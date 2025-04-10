@@ -6,7 +6,7 @@ export const FilterContainer = styled.div`
   flex-direction: column;
   margin-top: 48px;
   width: 360px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 export const FilterTitle = styled.h3`
   font-size: 16px;

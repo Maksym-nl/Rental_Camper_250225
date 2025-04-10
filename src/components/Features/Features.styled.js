@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const FeaturesWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  /* outline: 3px solid green; */
 `;
 
 export const FeaturesContainer = styled.div`
@@ -16,10 +17,6 @@ export const FeaturesContainer = styled.div`
   padding-top: 44px;
   padding-bottom: 44px;
   border-radius: 10px;
-  outline: 3px solid green;
 `;
 
 // export const FeaturesContent = styled.div`
-//   flex: 1;
-//   min-width: 300px;
-// `;

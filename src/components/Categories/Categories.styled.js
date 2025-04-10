@@ -4,7 +4,7 @@ export const CategoryWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 export const CategoryList = styled.ul`
   display: flex;

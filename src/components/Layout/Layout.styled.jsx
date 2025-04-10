@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   align-items: center;
   padding-top: 24px;
@@ -8,6 +9,14 @@ export const Header = styled.div`
   background-color: ${props => props.theme.colors['F2F4F7']};
   /* gap: 450px; */
 `;
+
+export const LogoLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+`;
+
 export const Logo = styled.div`
   margin: 0;
   padding-left: 64px;
@@ -18,6 +27,7 @@ export const Logo = styled.div`
   font-weight: 800;
   /* outline: 1px solid red; */
 `;
+
 export const Trucks = styled.span`
   color: ${props => props.theme.colors['475467']};
 `;
@@ -40,4 +50,12 @@ export const Nav = styled.ul`
       color: ${props => props.theme.colors['D84343']};
     }
   }
+`;
+
+export const Main = styled.main`
+  /* outline: 1px solid red; */
+`;
+
+export const Footer = styled.footer`
+  /* outline: 1px solid red; */
 `;

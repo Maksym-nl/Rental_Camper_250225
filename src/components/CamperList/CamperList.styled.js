@@ -126,3 +126,7 @@ export const FavoriteButton = styled.button`
     }
   }
 `;
+
+export const CamperListWrapper = styled.div`
+  /* outline: 1px solid red; */
+`;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 export const VehicleWrapper = styled.div`
   margin-top: 100px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 
 export const Title = styled.h3`

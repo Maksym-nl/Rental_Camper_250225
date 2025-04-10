@@ -6,7 +6,7 @@ export const VehicleTypeContainer = styled.div`
   margin-left: 0;
   flex-direction: column;
   width: 100%;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 `;
 export const VehicleTypeTitle = styled.h3`
   font-size: 20px;

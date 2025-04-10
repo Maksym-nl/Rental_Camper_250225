@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 export const ContainerItems = styled.div`
   display: flex;
   flex-direction: column;
-  outline: 1px solid red;
   background-color: ${p => p.theme.colors['FFFFFF']};
   padding-left: 64px;
   padding-top: 48px;
@@ -78,4 +77,8 @@ export const StyledNavLink = styled(NavLink)`
     border-bottom: 5px solid ${p => p.theme.colors['D84343']};
     color: ${p => p.theme.colors['D84343']};
   }
+`;
+
+export const CamperItemWrapper = styled.div`
+  /* outline: 1px solid red; */
 `;

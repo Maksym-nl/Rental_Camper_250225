@@ -6,7 +6,7 @@ export const FormWrapper = styled.div`
   border-radius: 10px;
   width: 588px;
   padding: 44px;
-  outline: 3px solid blue;
+  /* outline: 3px solid blue; */
   /* margin-left: auto; Добавляем отступ слева, чтобы прижать форму вправо */
 `;
 
@@ -41,7 +41,7 @@ export const Input = styled(Field)`
   transition: all 0.3s ease;
 
   &:focus {
-    outline: none;
+    /* outline: none; */
     box-shadow: 0 0 0 2px ${props => props.theme.colors['DADDE1']};
     background: ${props => props.theme.colors['FFFFFF']};
   }
@@ -63,7 +63,7 @@ export const TextArea = styled(Field)`
   transition: all 0.3s ease;
 
   &:focus {
-    outline: none;
+    /* outline: none; */
     box-shadow: 0 0 0 2px ${props => props.theme.colors['DADDE1']};
     background: ${props => props.theme.colors['FFFFFF']};
   }
@@ -93,7 +93,24 @@ export const Button = styled.button`
   }
 `;
 
-// export const DatePickerWrapper = styled.div`
-//   position: relative;
-//   width: 100%;
-// `;
+export const SuccessMessage = styled.div`
+  background-color: #4caf50;
+  color: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease-in-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;

@@ -39,3 +39,7 @@ export const Overlay = styled.div`
   background: rgba(0, 0, 0, 0.2);
   z-index: 1;
 `;
+export const HomePageWrapper = styled.div`
+  /* outline: 1px solid red; */
+  // ... existing code ...
+`;

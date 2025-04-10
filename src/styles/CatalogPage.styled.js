@@ -21,5 +21,9 @@ export const CamperListContainer = styled.div`
   margin-top: 48px;
 
   width: 888px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
+`;
+
+export const CatalogPageWrapper = styled.div`
+  /* outline: 1px solid red; */
 `;

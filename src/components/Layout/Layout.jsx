@@ -1,12 +1,15 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { Header, Logo, Trucks, Nav } from './Layout.styled';
+import { Header, Logo, Trucks, Nav, LogoLink } from './Layout.styled';
+
 export const Layout = () => {
   return (
     <div>
       <Header>
-        <Logo>
-          Travel<Trucks>Trucks</Trucks>
-        </Logo>
+        <LogoLink to="/campers">
+          <Logo>
+            Travel<Trucks>Trucks</Trucks>
+          </Logo>
+        </LogoLink>
         <Nav>
           <li>
             <NavLink to="/">Home</NavLink>

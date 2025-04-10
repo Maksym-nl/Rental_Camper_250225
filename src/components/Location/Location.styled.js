@@ -6,7 +6,6 @@ export const LocationForm = styled.div`
   padding-top: 60px;
   margin-left: 64px;
   background-color: ${p => p.theme.colors['FFFFFF']};
-  outline: 1px solid red;
 `;
 
 export const Text = styled.p`
@@ -42,4 +41,10 @@ export const IconWrapper = styled.div`
   background-image: url(${MapIcon});
   background-repeat: no-repeat;
   background-position: center;
+`;
+
+export const LocationWrapper = styled.div`
+  // ... existing code ...
+  /* outline: 1px solid red; */
+  // ... existing code ...
 `;
