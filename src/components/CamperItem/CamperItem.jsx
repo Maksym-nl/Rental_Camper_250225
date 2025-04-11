@@ -26,7 +26,7 @@ import {
 export const CamperItem = ({ id }) => {
   const dispatch = useDispatch();
   const { camper, isLoading, error } = useSelector(state => state.camperById);
-  // const [ImgError, setImgError] = useState(false);
+
   useEffect(() => {
     dispatch(fetchCamperById(id));
     return () => {

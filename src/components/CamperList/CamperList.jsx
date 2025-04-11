@@ -9,7 +9,7 @@ import { addToFavorites, removeFavorites } from '../../redux/favoriteSlice';
 import HeartIcon from '../../img/heart.svg';
 import StarIcon from '../../img/Property 1=Pressed.svg';
 import MapIcon from '../../img/Map.svg';
-// import TransmissionIcon from '../../img/diagram.svg';
+import CamperImage from 'components/CamperImage/CamperImage';
 import {
   CamperListItem,
   CamperListItemImage,
@@ -58,10 +58,7 @@ export const CamperList = () => {
           return (
             <CamperListItem key={camper.id}>
               <div>
-                <CamperListItemImage
-                  src={camper.gallery[0].thumb}
-                  alt={camper.name}
-                />
+                <CamperImage src={camper.gallery[0]?.thumb} alt={camper.name} />
               </div>
               <CamperListItemInfo>
                 <CamperListItemInfoTitle>

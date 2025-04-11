@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import defaultCamper from '../../img/default-camper.jpg';
 // Дефолтное фото кемпера
-const DEFAULT_CAMPER_IMAGE =
-  'https://ftp.goit.study/img/campers-test-task/default-camper.webp';
+const DEFAULT_CAMPER_IMAGE = defaultCamper;
 
 const Image = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 290px;
+  height: 310px;
   object-fit: cover;
   border-radius: 10px;
 `;

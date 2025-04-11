@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${props => props.theme.colors['FFC531']};
+    background-color: ${props => props.theme.colors['DADDE1']};
     color: ${props => props.theme.colors.veryDark};
     font-size: 16px;
   }

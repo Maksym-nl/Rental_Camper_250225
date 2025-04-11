@@ -14,8 +14,6 @@ import transmissionIcon from '../../img/diagram.svg';
 import KitchenIcon from '../../img/cup-hot.svg';
 import TvIcon from '../../img/tv.svg';
 import BathroomIcon from '../../img/ph_shower.svg';
-// import { useState } from 'react';
-// import omit from 'lodash.omit';
 
 export const VehicleEquipment = ({ equpment, handleClick, transmission }) => {
   return (

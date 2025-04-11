@@ -1,11 +1,8 @@
 import * as React from 'react';
-
 import Stack from '@mui/material/Stack';
-
 import Avatar from '@mui/material/Avatar';
 
 export default function LetterAvatars({ reviewerName }) {
-  // const theme = useTheme();
   const firstLetter =
     typeof reviewerName === 'string' && reviewerName.length > 0
       ? reviewerName.charAt(0).toUpperCase()

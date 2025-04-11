@@ -70,7 +70,7 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   color: ${p => p.theme.colors.veryDark};
   padding-bottom: 20px;
-  /* border-bottom: 24px solid transparent; */
+
   transition: border-color 0.3s ease;
 
   &.active {
@@ -79,6 +79,4 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export const CamperItemWrapper = styled.div`
-  /* outline: 1px solid red; */
-`;
+export const CamperItemWrapper = styled.div``;

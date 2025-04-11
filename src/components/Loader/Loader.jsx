@@ -6,8 +6,8 @@ export const Loader = () => {
       <RotatingLines
         visible={true}
         // color="red"
-        height="16"
-        width="16"
+        height="26"
+        width="26"
         strokeWidth="5"
         animationDuration="0.75"
         ariaLabel="rotating-lines-loading"

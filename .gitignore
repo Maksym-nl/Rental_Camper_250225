@@ -3,6 +3,7 @@
 #Junk
 .vscode/
 .idea/
+.cursor/rules/
 
 # dependencies
 /node_modules
