@@ -12,7 +12,6 @@ import MapIcon from '../../img/Map.svg';
 import CamperImage from 'components/CamperImage/CamperImage';
 import {
   CamperListItem,
-  CamperListItemImage,
   CamperListItemInfo,
   CamperListItemInfoTitle,
   CamperListItemInfoPrice,
