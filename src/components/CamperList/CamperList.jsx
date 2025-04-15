@@ -9,7 +9,7 @@ import { addToFavorites, removeFavorites } from '../../redux/favoriteSlice';
 import HeartIcon from '../../img/heart.svg';
 import StarIcon from '../../img/Property 1=Pressed.svg';
 import MapIcon from '../../img/Map.svg';
-import CamperImage from 'components/CamperImage/CamperImage';
+
 import {
   CamperListItem,
   CamperListItemInfo,
@@ -20,7 +20,6 @@ import {
   RetingWrapper,
   LocationWrapper,
   LoadMoreContainer,
-  // CategoryWrapper,
   ShowMoreContainer,
   FavoriteButton,
   CamperListItemImage,

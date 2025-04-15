@@ -65,6 +65,4 @@ export const CamperListContainer = styled.div`
   }
 `;
 
-export const CatalogPageWrapper = styled.div`
-  /* outline: 1px solid red; */
-`;
+export const CatalogPageWrapper = styled.div``;

@@ -115,41 +115,21 @@ export const CamperListItemInfoTitle = styled.div`
   line-height: 1.33;
   font-size: 24px;
   @media (max-width: 480px) {
-    /* display: flex; */
-    /* justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    line-height: 1.33; */
     font-size: 20px;
     flex-direction: column;
     margin-top: 24px;
   }
   @media (min-width: 481px) and (max-width: 768px) {
-    /* display: flex; */
-    /* justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    line-height: 1.33; */
     font-size: 20px;
     flex-direction: column;
     margin-top: 24px;
   }
   @media (min-width: 769px) and (max-width: 992px) {
-    /* justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    line-height: 1.33; */
     font-size: 20px;
     flex-direction: column;
     margin-top: 24px;
   }
   @media (min-width: 1201px) and (max-width: 1439px) {
-    /* justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-    line-height: 1.33; */
-    /* font-size: 20px; */
-    /* flex-direction: column; */
     margin-top: 24px;
   }
 `;
@@ -171,13 +151,6 @@ export const CamperListRetingLocale = styled.div`
     justify-content: center;
     align-items: center;
   }
-  /* @media (min-width: 769px) and (max-width: 992px) {
-    row-gap: 8px;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  } */
 `;
 export const StarImg = styled.img`
   width: 16px;
