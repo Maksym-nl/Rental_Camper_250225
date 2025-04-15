@@ -11,7 +11,7 @@ import {
 import vanIcon from '../../img/bi_grid-1x2.svg';
 import fullyIntegratedIcon from '../../img/bi_grid.svg';
 import alcoveIcon from '../../img/bi_grid-3x3-gap.svg';
-import { StyledButton } from 'components/VehicleEquipment/VehicleEquipment.styled';
+// import { StyledButton } from 'components/VehicleEquipment/VehicleEquipment.styled';
 
 export const VehicleType = ({ handleClick, form }) => {
   return (
@@ -20,7 +20,7 @@ export const VehicleType = ({ handleClick, form }) => {
       <Line />
       <VehicleTypeList>
         <VehicleTypeItem>
-          <StyledButton
+          <button
             type="button"
             onClick={() => handleClick('panelTruck', 'form')}
             className={form.includes('panelTruck') ? 'select' : ''}
@@ -29,25 +29,22 @@ export const VehicleType = ({ handleClick, form }) => {
               <VehicleTypeItemImage src={vanIcon} alt="Van" />
               <p>Van</p>
             </BtnText>
-          </StyledButton>
+          </button>
         </VehicleTypeItem>
         <VehicleTypeItem>
-          <StyledButton
+          <button
             type="button"
             onClick={() => handleClick('fullyIntegrated', 'form')}
             className={form.includes('fullyIntegrated') ? 'select' : ''}
           >
             <BtnText>
-              <VehicleTypeItemImage
-                src={fullyIntegratedIcon}
-                alt="Fully Integrated"
-              />
+              <VehicleTypeItemImage src={fullyIntegratedIcon} alt="Fully Integrated" />
               <p>Fully Integrated</p>
             </BtnText>
-          </StyledButton>
+          </button>
         </VehicleTypeItem>
         <VehicleTypeItem>
-          <StyledButton
+          <button
             type="button"
             onClick={() => handleClick('alcove', 'form')}
             className={form.includes('alcove') ? 'select' : ''}
@@ -56,7 +53,7 @@ export const VehicleType = ({ handleClick, form }) => {
               <VehicleTypeItemImage src={alcoveIcon} alt="Alcove" />
               <p>Alcove</p>
             </BtnText>
-          </StyledButton>
+          </button>
         </VehicleTypeItem>
       </VehicleTypeList>
     </VehicleTypeContainer>

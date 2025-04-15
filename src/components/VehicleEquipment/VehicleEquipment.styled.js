@@ -14,7 +14,7 @@ export const VehicleEquipmentTitle = styled.h3`
   margin-bottom: 16px;
 `;
 export const Line = styled.span`
-  width: 360px;
+  width: 100%;
   height: 1px;
   background-color: ${p => p.theme.colors['DADDE1']};
   margin-bottom: 24px;
@@ -45,7 +45,17 @@ export const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   transition: all 0.3 sease;
-
+  @media (max-width: 480px) {
+    width: 33%;
+    height: 112px;
+    margin: 1%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3 sease;
+  }
   &:hover {
     border: 1px solid ${props => props.theme.colors['D84343']};
   }

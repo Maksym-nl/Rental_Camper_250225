@@ -10,14 +10,7 @@ import {
   VehicleLabel,
   VehicleValue,
 } from './VehicleDetails.styled';
-const VehiclesCamper = [
-  'form',
-  'length',
-  'width',
-  'height',
-  'tank',
-  'consumption',
-];
+const VehiclesCamper = ['form', 'length', 'width', 'height', 'tank', 'consumption'];
 
 // Функция для получения отображаемого текста для ключей
 const getDisplayKey = key => {

@@ -15,9 +15,14 @@ export const CategoryList = styled.ul`
 `;
 export const CategoryItem = styled.li`
   background-color: ${props => props.theme.colors['F2F4F7']};
-
   border-radius: 100px;
   padding: 8px 12px;
+  @media (max-width: 480px) {
+    display: flex;
+    width: 48%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 export const CategoryItemImage = styled.div`
   display: flex;
@@ -26,4 +31,7 @@ export const CategoryItemImage = styled.div`
   align-content: center;
   flex-direction: row;
   justify-content: center;
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
 `;

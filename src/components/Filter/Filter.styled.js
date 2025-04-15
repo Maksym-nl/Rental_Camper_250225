@@ -6,7 +6,10 @@ export const FilterContainer = styled.div`
   flex-direction: column;
   margin-top: 48px;
   width: 360px;
-  /* outline: 1px solid red; */
+  @media (max-width: 480px) {
+    margin-left: ${p => p.theme.spacing(8)};
+    margin-top: ${p => p.theme.spacing(6)};
+  }
 `;
 export const FilterTitle = styled.h3`
   font-size: 16px;

@@ -15,10 +15,10 @@ export default function Home() {
       <HeroImage src={heroImage} alt="hero" />
       <ContainerWrapper>
         <Title>Campers of your dreams</Title>
-        <Description>
-          You can find everything you want in our catalog
-        </Description>
-        <ViewNowBtn />
+        <Description>You can find everything you want in our catalog</Description>
+        <div>
+          <ViewNowBtn />
+        </div>
       </ContainerWrapper>
     </HeroSection>
   );

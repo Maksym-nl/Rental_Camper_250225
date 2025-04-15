@@ -23,6 +23,7 @@ import {
   // CategoryWrapper,
   ShowMoreContainer,
   FavoriteButton,
+  CamperListItemImage,
 } from './CamperList.styled';
 import { Categories } from 'components/Categories/Categories';
 
@@ -57,7 +58,7 @@ export const CamperList = () => {
           return (
             <CamperListItem key={camper.id}>
               <div>
-                <CamperImage src={camper.gallery[0]?.thumb} alt={camper.name} />
+                <CamperListItemImage src={camper.gallery[0]?.thumb} alt={camper.name} />
               </div>
               <CamperListItemInfo>
                 <CamperListItemInfoTitle>
