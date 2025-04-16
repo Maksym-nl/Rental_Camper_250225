@@ -13,6 +13,8 @@ import {
   Title,
   List,
   Item,
+  RatingStyled,
+  LocationStyled,
   ListImg,
   Img,
   Description,
@@ -54,10 +56,15 @@ export const CamperItem = ({ id }) => {
       <Title>{camper.name}</Title>
       <List>
         <Item>
-          <img src={StarImg} alt={StarImg} />
-          {camper.rating}({camper.reviews.length} Reviews)
-          <img src={MapIcon} alt={MapIcon} />
-          {camper.location}
+          <RatingStyled>
+            <img src={StarImg} alt={StarImg} />
+            {camper.rating}({camper.reviews.length} Reviews)
+          </RatingStyled>
+          <LocationStyled>
+            {' '}
+            <img src={MapIcon} alt={MapIcon} />
+            {camper.location}
+          </LocationStyled>
         </Item>
       </List>
       <PriceContainer>

@@ -6,6 +6,7 @@ import {
   VehicleTypeItem,
   VehicleTypeItemImage,
   BtnText,
+  StyledButton,
 } from './VehicleType.styled';
 
 import vanIcon from '../../img/bi_grid-1x2.svg';
@@ -20,7 +21,7 @@ export const VehicleType = ({ handleClick, form }) => {
       <Line />
       <VehicleTypeList>
         <VehicleTypeItem>
-          <button
+          <StyledButton
             type="button"
             onClick={() => handleClick('panelTruck', 'form')}
             className={form.includes('panelTruck') ? 'select' : ''}
@@ -29,10 +30,10 @@ export const VehicleType = ({ handleClick, form }) => {
               <VehicleTypeItemImage src={vanIcon} alt="Van" />
               <p>Van</p>
             </BtnText>
-          </button>
+          </StyledButton>
         </VehicleTypeItem>
         <VehicleTypeItem>
-          <button
+          <StyledButton
             type="button"
             onClick={() => handleClick('fullyIntegrated', 'form')}
             className={form.includes('fullyIntegrated') ? 'select' : ''}
@@ -41,10 +42,10 @@ export const VehicleType = ({ handleClick, form }) => {
               <VehicleTypeItemImage src={fullyIntegratedIcon} alt="Fully Integrated" />
               <p>Fully Integrated</p>
             </BtnText>
-          </button>
+          </StyledButton>
         </VehicleTypeItem>
         <VehicleTypeItem>
-          <button
+          <StyledButton
             type="button"
             onClick={() => handleClick('alcove', 'form')}
             className={form.includes('alcove') ? 'select' : ''}
@@ -53,7 +54,7 @@ export const VehicleType = ({ handleClick, form }) => {
               <VehicleTypeItemImage src={alcoveIcon} alt="Alcove" />
               <p>Alcove</p>
             </BtnText>
-          </button>
+          </StyledButton>
         </VehicleTypeItem>
       </VehicleTypeList>
     </VehicleTypeContainer>

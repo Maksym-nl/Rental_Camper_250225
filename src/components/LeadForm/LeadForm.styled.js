@@ -6,8 +6,26 @@ export const FormWrapper = styled.div`
   border-radius: 10px;
   width: 588px;
   padding: 44px;
-  /* outline: 3px solid blue; */
-  /* margin-left: auto; Добавляем отступ слева, чтобы прижать форму вправо */
+  @media (max-width: 576px) {
+    max-width: 100%;
+    padding: 12px;
+    margin-top: 24px;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    max-width: 100%;
+    padding: 12px;
+    margin-top: 24px;
+  }
+  @media (min-width: 769px) and (max-width: 992px) {
+    max-width: 100%;
+    padding: 12px;
+    margin-top: 24px;
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    max-width: 100%;
+    padding: 12px;
+    margin-top: 24px;
+  }
 `;
 
 export const Title = styled.h3`
@@ -15,11 +33,27 @@ export const Title = styled.h3`
   font-weight: 600;
   line-height: 1.2;
   margin-bottom: 8px;
+  @media (max-width: 576px) {
+    font-size: 16px;
+    text-align: center;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    font-size: 24px;
+    text-align: center;
+  }
 `;
 
 export const Text = styled.p`
   line-height: 1.5;
   margin-bottom: 8px;
+  @media (max-width: 576px) {
+    font-size: 16px;
+    text-align: center;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    /* font-size: 16px; */
+    text-align: center;
+  }
 `;
 
 export const FormStyled = styled(Form)`
@@ -30,7 +64,7 @@ export const FormStyled = styled(Form)`
 `;
 
 export const Input = styled(Field)`
-  width: 100%;
+  max-width: 100%;
   padding-top: 18px;
   padding-right: 337px;
   padding-bottom: 18px;
@@ -49,6 +83,12 @@ export const Input = styled(Field)`
   &::placeholder {
     color: ${props => props.theme.colors['6C717B']};
     opacity: 0.5;
+  }
+  @media (max-width: 576px) {
+    padding-top: 18px;
+    padding-right: 69%;
+    padding-bottom: 18px;
+    padding-left: 18px;
   }
 `;
 
@@ -71,6 +111,10 @@ export const TextArea = styled(Field)`
   &::placeholder {
     color: ${props => props.theme.colors['6C717B']};
     opacity: 0.5;
+  }
+  @media (max-width: 576px) {
+    height: 90px;
+    padding: 8px;
   }
 `;
 

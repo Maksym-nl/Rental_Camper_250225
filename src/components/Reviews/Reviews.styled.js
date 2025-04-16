@@ -5,15 +5,38 @@ export const Container = styled.div`
   justify-content: space-between;
   margin-top: 48px;
   margin-bottom: 48px;
-  /* outline: 2px solid green; */
+  @media (max-width: 576px) {
+    flex-direction: column;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  @media (min-width: 769px) and (max-width: 992px) {
+    flex-direction: column;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 `;
 
 export const ReviewsList = styled.ul`
-  width: 631px;
+  max-width: 631px;
   /* outline: 10px solid red; */
   display: flex;
   flex-direction: column;
   gap: 48px;
+  @media (max-width: 576px) {
+    gap: 24px;
+  }
+  @media (min-width: 993px) and (max-width: 1200px) {
+    margin-right: 48px;
+  }
+  @media (min-width: 1201px) {
+    margin-right: 48px;
+  }
 `;
 export const ReviewItem = styled.li`
   display: flex;
